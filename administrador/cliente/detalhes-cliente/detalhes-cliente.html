@@ -1,0 +1,891 @@
+<!doctype html>
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Detalhes do Cliente - Administrador XCon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      /* Scrollbar invisivel - aparece no hover */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      /* Firefox */
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+      /* Tab styles */
+      .tab-btn {
+        position: relative;
+        padding-bottom: 1rem;
+      }
+      .tab-btn.active {
+        color: #333333;
+        font-weight: 700;
+      }
+      .tab-btn.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #333333;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img
+              src="../../../logo/logo-xconstrucao-horizontal.png"
+              alt="XCon"
+              class="h-12"
+            />
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">dashboard</span>
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="../admin-cliente.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">person</span>
+              <span class="text-sm font-semibold">Cliente</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">engineering</span>
+              <span class="text-sm font-medium">Empreiteira</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">payments</span>
+              <span class="text-sm font-medium">Financeiro</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+              <span class="text-sm font-medium">Caixa</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">trending_up</span>
+              <span class="text-sm font-medium">Entradas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">trending_down</span>
+              <span class="text-sm font-medium">Saídas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">campaign</span>
+              <span class="text-sm font-medium">Anúncios</span>
+            </a>
+          </nav>
+        </div>
+        <div class="px-6 flex flex-col gap-1">
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">help</span>
+            <span class="text-sm font-medium whitespace-nowrap">Perguntas Frequentes</span>
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">settings</span>
+            <span class="text-sm font-medium">Configurações</span>
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">logout</span>
+            <span class="text-sm font-medium">Sair</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                placeholder="Buscar clientes, empreiteiras ou lançamentos..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">notifications</span>
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Rafael Santos
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">
+                  Administrador
+                </p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do administrador"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-8">
+          <!-- Navegação + Breadcrumb -->
+          <div class="flex flex-col gap-2">
+            <a
+              href="../admin-cliente.html"
+              class="text-sm text-gray-500 hover:text-primary flex items-center gap-2 w-fit"
+            >
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+              Voltar
+            </a>
+            <div class="flex items-center gap-2 text-sm">
+              <a href="../admin-cliente.html" class="text-gray-500 hover:text-primary">Cliente</a>
+              <span class="material-symbols-outlined text-gray-400 text-[16px]">chevron_right</span>
+              <span class="font-bold text-primary">Roberto Gomes</span>
+            </div>
+          </div>
+
+          <!-- Hero do Cliente -->
+          <div class="bg-white rounded-3xl border border-border-light card-shadow p-8">
+            <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+              <div class="flex flex-col sm:flex-row gap-6">
+                <!-- Avatar -->
+                <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl font-bold text-white">RG</span>
+                </div>
+                <!-- Dados -->
+                <div class="flex flex-col gap-3">
+                  <div>
+                    <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Roberto Gomes</h1>
+                    <p class="text-sm text-gray-500 mt-1">Pessoa Jurídica</p>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span class="material-symbols-outlined text-[18px] text-gray-400">mail</span>
+                      roberto.gomes@email.com
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span class="material-symbols-outlined text-[18px] text-gray-400">call</span>
+                      (11) 98765-1234
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span class="material-symbols-outlined text-[18px] text-gray-400">badge</span>
+                      CNPJ: 12.345.678/0001-99
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 mt-1">
+                    <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success border border-success/20">
+                      Ativo
+                    </span>
+                    <span class="text-xs text-gray-400">Cadastrado em: 15/03/2024</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Botões de Ação -->
+              <div class="flex flex-wrap gap-3">
+                <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">edit</span>
+                  Editar Dados
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-warning/10 text-warning text-sm font-bold rounded-lg border border-warning/20 hover:bg-warning/20 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">lock_reset</span>
+                  Resetar Senha
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 bg-error/10 text-error text-sm font-bold rounded-lg border border-error/20 hover:bg-error/20 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">block</span>
+                  Bloquear Acesso
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards de Indicadores -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Obras Ativas -->
+            <div class="bg-white rounded-3xl border border-border-light card-shadow p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium">Obras Ativas</p>
+                  <p class="text-4xl font-extrabold text-gray-900 mt-2">8</p>
+                  <p class="text-xs text-success font-medium mt-1">+2 este mês</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary text-[24px]">construction</span>
+                </div>
+              </div>
+            </div>
+            <!-- Volume Financeiro -->
+            <div class="bg-white rounded-3xl border border-border-light card-shadow p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium">Volume Financeiro</p>
+                  <p class="text-3xl font-extrabold text-gray-900 mt-2">R$ 3.250.000</p>
+                  <p class="text-xs text-gray-500 font-medium mt-1">Total contratado</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-success/10 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-success text-[24px]">payments</span>
+                </div>
+              </div>
+            </div>
+            <!-- Obras Concluídas -->
+            <div class="bg-white rounded-3xl border border-border-light card-shadow p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium">Obras Concluídas</p>
+                  <p class="text-4xl font-extrabold text-gray-900 mt-2">12</p>
+                  <p class="text-xs text-gray-500 font-medium mt-1">Histórico completo</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-info/10 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-info text-[24px]">check_circle</span>
+                </div>
+              </div>
+            </div>
+            <!-- Última Atividade -->
+            <div class="bg-white rounded-3xl border border-border-light card-shadow p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm text-gray-500 font-medium">Última Atividade</p>
+                  <p class="text-2xl font-bold text-gray-900 mt-2">Há 2 dias</p>
+                  <p class="text-xs text-gray-500 font-medium mt-1">Login na plataforma</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-warning/10 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-warning text-[24px]">schedule</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabs de Conteúdo -->
+          <div class="bg-white rounded-3xl border border-border-light card-shadow p-8">
+            <!-- Tab Headers -->
+            <div class="flex gap-6 border-b border-gray-100 pb-0 mb-6 overflow-x-auto">
+              <button class="tab-btn active text-gray-500 hover:text-primary transition-colors text-sm font-medium whitespace-nowrap" data-tab="obras">
+                Obras
+              </button>
+              <button class="tab-btn text-gray-500 hover:text-primary transition-colors text-sm font-medium whitespace-nowrap" data-tab="financeiro">
+                Financeiro
+              </button>
+              <button class="tab-btn text-gray-500 hover:text-primary transition-colors text-sm font-medium whitespace-nowrap" data-tab="documentos">
+                Documentos
+              </button>
+              <button class="tab-btn text-gray-500 hover:text-primary transition-colors text-sm font-medium whitespace-nowrap" data-tab="historico">
+                Histórico
+              </button>
+            </div>
+
+            <!-- Tab Content: Obras -->
+            <div id="tab-obras" class="tab-content active">
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-gray-100">
+                      <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Obra</th>
+                      <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Status</th>
+                      <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Progresso</th>
+                      <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Valor</th>
+                      <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Prazo</th>
+                      <th class="text-right py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Obra 1 -->
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-4 px-4">
+                        <div>
+                          <p class="text-sm font-bold text-gray-900">Residência Aurora</p>
+                          <p class="text-xs text-gray-500 mt-0.5">São Paulo, SP</p>
+                        </div>
+                      </td>
+                      <td class="py-4 px-4">
+                        <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info">
+                          Em andamento
+                        </span>
+                      </td>
+                      <td class="py-4 px-4">
+                        <div class="flex items-center gap-3">
+                          <div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-info rounded-full" style="width: 65%"></div>
+                          </div>
+                          <span class="text-sm font-medium text-gray-700">65%</span>
+                        </div>
+                      </td>
+                      <td class="py-4 px-4">
+                        <p class="text-sm font-bold text-gray-900">R$ 450.000</p>
+                      </td>
+                      <td class="py-4 px-4">
+                        <p class="text-sm text-gray-700">15/03/2026</p>
+                      </td>
+                      <td class="py-4 px-4">
+                        <div class="flex items-center justify-end gap-1">
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors" title="Ver detalhes">
+                            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+                          </button>
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors" title="Editar">
+                            <span class="material-symbols-outlined text-[20px]">edit</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Obra 2 -->
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-4 px-4">
+                        <div>
+                          <p class="text-sm font-bold text-gray-900">Edifício Comercial Central</p>
+                          <p class="text-xs text-gray-500 mt-0.5">São Paulo, SP</p>
+                        </div>
+                      </td>
+                      <td class="py-4 px-4">
+                        <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info">
+                          Em andamento
+                        </span>
+                      </td>
+                      <td class="py-4 px-4">
+                        <div class="flex items-center gap-3">
+                          <div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-info rounded-full" style="width: 32%"></div>
+                          </div>
+                          <span class="text-sm font-medium text-gray-700">32%</span>
+                        </div>
+                      </td>
+                      <td class="py-4 px-4">
+                        <p class="text-sm font-bold text-gray-900">R$ 1.800.000</p>
+                      </td>
+                      <td class="py-4 px-4">
+                        <p class="text-sm text-gray-700">30/06/2026</p>
+                      </td>
+                      <td class="py-4 px-4">
+                        <div class="flex items-center justify-end gap-1">
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors" title="Ver detalhes">
+                            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+                          </button>
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors" title="Editar">
+                            <span class="material-symbols-outlined text-[20px]">edit</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Obra 3 -->
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                      <td class="py-4 px-4">
+                        <div>
+                          <p class="text-sm font-bold text-gray-900">Reforma Escritório</p>
+                          <p class="text-xs text-gray-500 mt-0.5">Campinas, SP</p>
+                        </div>
+                      </td>
+                      <td class="py-4 px-4">
+                        <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success">
+                          Concluída
+                        </span>
+                      </td>
+                      <td class="py-4 px-4">
+                        <div class="flex items-center gap-3">
+                          <div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-success rounded-full" style="width: 100%"></div>
+                          </div>
+                          <span class="text-sm font-medium text-gray-700">100%</span>
+                        </div>
+                      </td>
+                      <td class="py-4 px-4">
+                        <p class="text-sm font-bold text-gray-900">R$ 85.000</p>
+                      </td>
+                      <td class="py-4 px-4">
+                        <p class="text-sm text-gray-700">10/01/2026</p>
+                      </td>
+                      <td class="py-4 px-4">
+                        <div class="flex items-center justify-end gap-1">
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors" title="Ver detalhes">
+                            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+                          </button>
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors" title="Editar">
+                            <span class="material-symbols-outlined text-[20px]">edit</span>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Tab Content: Financeiro -->
+            <div id="tab-financeiro" class="tab-content">
+              <!-- Resumo Cards -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-50 rounded-2xl p-6">
+                  <p class="text-sm text-gray-500 font-medium">Total Pago</p>
+                  <p class="text-2xl font-extrabold text-success mt-2">R$ 1.850.000</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6">
+                  <p class="text-sm text-gray-500 font-medium">Saldo Pendente</p>
+                  <p class="text-2xl font-extrabold text-warning mt-2">R$ 1.400.000</p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6">
+                  <p class="text-sm text-gray-500 font-medium">Próximo Vencimento</p>
+                  <p class="text-2xl font-extrabold text-gray-900 mt-2">15/02/2026</p>
+                  <p class="text-xs text-gray-500 mt-1">R$ 85.000</p>
+                </div>
+              </div>
+
+              <!-- Placeholder Gráfico -->
+              <div class="bg-gray-50 rounded-2xl p-8 mb-8 flex items-center justify-center min-h-[200px]">
+                <div class="text-center">
+                  <span class="material-symbols-outlined text-gray-300 text-[48px]">monitoring</span>
+                  <p class="text-sm text-gray-400 mt-2">Gráfico de Entradas vs Saídas</p>
+                </div>
+              </div>
+
+              <!-- Tabela de Pagamentos -->
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Histórico de Pagamentos</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full">
+                    <thead>
+                      <tr class="border-b border-gray-100">
+                        <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Data</th>
+                        <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Descrição</th>
+                        <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Valor</th>
+                        <th class="text-left py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Status</th>
+                        <th class="text-right py-3 px-4 text-xs font-bold uppercase text-gray-500 tracking-wider">Comprovante</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                        <td class="py-4 px-4 text-sm text-gray-700">15/01/2026</td>
+                        <td class="py-4 px-4 text-sm text-gray-900">Parcela 3 - Residência Aurora</td>
+                        <td class="py-4 px-4 text-sm font-bold text-gray-900">R$ 85.000</td>
+                        <td class="py-4 px-4">
+                          <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success">Pago</span>
+                        </td>
+                        <td class="py-4 px-4 text-right">
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">download</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                        <td class="py-4 px-4 text-sm text-gray-700">10/01/2026</td>
+                        <td class="py-4 px-4 text-sm text-gray-900">Parcela Final - Reforma Escritório</td>
+                        <td class="py-4 px-4 text-sm font-bold text-gray-900">R$ 25.000</td>
+                        <td class="py-4 px-4">
+                          <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success">Pago</span>
+                        </td>
+                        <td class="py-4 px-4 text-right">
+                          <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">download</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="py-4 px-4 text-sm text-gray-700">15/02/2026</td>
+                        <td class="py-4 px-4 text-sm text-gray-900">Parcela 4 - Residência Aurora</td>
+                        <td class="py-4 px-4 text-sm font-bold text-gray-900">R$ 85.000</td>
+                        <td class="py-4 px-4">
+                          <span class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-warning/10 text-warning">Pendente</span>
+                        </td>
+                        <td class="py-4 px-4 text-right">
+                          <span class="text-xs text-gray-400">—</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content: Documentos -->
+            <div id="tab-documentos" class="tab-content">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-lg font-bold text-gray-900">Documentos Anexados</h3>
+                <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors">
+                  <span class="material-symbols-outlined text-[18px]">add</span>
+                  Adicionar Documento
+                </button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Documento 1 -->
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center flex-shrink-0">
+                      <span class="material-symbols-outlined text-error text-[24px]">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Contrato Social</p>
+                      <p class="text-xs text-gray-500 mt-1">Enviado em: 15/03/2024</p>
+                      <div class="flex gap-2 mt-3">
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-primary transition-colors" title="Baixar">
+                          <span class="material-symbols-outlined text-[18px]">download</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-primary transition-colors" title="Visualizar">
+                          <span class="material-symbols-outlined text-[18px]">visibility</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-error transition-colors" title="Excluir">
+                          <span class="material-symbols-outlined text-[18px]">delete</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Documento 2 -->
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center flex-shrink-0">
+                      <span class="material-symbols-outlined text-error text-[24px]">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Comprovante de Endereço</p>
+                      <p class="text-xs text-gray-500 mt-1">Enviado em: 15/03/2024</p>
+                      <div class="flex gap-2 mt-3">
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-primary transition-colors" title="Baixar">
+                          <span class="material-symbols-outlined text-[18px]">download</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-primary transition-colors" title="Visualizar">
+                          <span class="material-symbols-outlined text-[18px]">visibility</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-error transition-colors" title="Excluir">
+                          <span class="material-symbols-outlined text-[18px]">delete</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Documento 3 -->
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center flex-shrink-0">
+                      <span class="material-symbols-outlined text-info text-[24px]">image</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">RG do Representante</p>
+                      <p class="text-xs text-gray-500 mt-1">Enviado em: 16/03/2024</p>
+                      <div class="flex gap-2 mt-3">
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-primary transition-colors" title="Baixar">
+                          <span class="material-symbols-outlined text-[18px]">download</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-primary transition-colors" title="Visualizar">
+                          <span class="material-symbols-outlined text-[18px]">visibility</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg hover:bg-gray-200 text-gray-500 hover:text-error transition-colors" title="Excluir">
+                          <span class="material-symbols-outlined text-[18px]">delete</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content: Histórico -->
+            <div id="tab-historico" class="tab-content">
+              <h3 class="text-lg font-bold text-gray-900 mb-6">Histórico de Atividades</h3>
+              <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gray-200"></div>
+                <!-- Timeline Items -->
+                <div class="flex flex-col gap-6">
+                  <!-- Item 1 -->
+                  <div class="flex gap-4">
+                    <div class="w-6 h-6 rounded-full bg-success flex items-center justify-center flex-shrink-0 z-10">
+                      <span class="material-symbols-outlined text-white text-[14px]">login</span>
+                    </div>
+                    <div class="flex-1 pb-6">
+                      <div class="flex items-center gap-2">
+                        <p class="text-sm font-bold text-gray-900">Login realizado</p>
+                        <span class="text-xs text-gray-400">Hoje, 14:32</span>
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">Acesso à plataforma via navegador</p>
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="flex gap-4">
+                    <div class="w-6 h-6 rounded-full bg-info flex items-center justify-center flex-shrink-0 z-10">
+                      <span class="material-symbols-outlined text-white text-[14px]">edit</span>
+                    </div>
+                    <div class="flex-1 pb-6">
+                      <div class="flex items-center gap-2">
+                        <p class="text-sm font-bold text-gray-900">Obra atualizada</p>
+                        <span class="text-xs text-gray-400">Ontem, 09:15</span>
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">Progresso da "Residência Aurora" atualizado para 65%</p>
+                    </div>
+                  </div>
+                  <!-- Item 3 -->
+                  <div class="flex gap-4">
+                    <div class="w-6 h-6 rounded-full bg-success flex items-center justify-center flex-shrink-0 z-10">
+                      <span class="material-symbols-outlined text-white text-[14px]">payments</span>
+                    </div>
+                    <div class="flex-1 pb-6">
+                      <div class="flex items-center gap-2">
+                        <p class="text-sm font-bold text-gray-900">Pagamento aprovado</p>
+                        <span class="text-xs text-gray-400">15/01/2026, 16:45</span>
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">Parcela 3 - Residência Aurora no valor de R$ 85.000</p>
+                    </div>
+                  </div>
+                  <!-- Item 4 -->
+                  <div class="flex gap-4">
+                    <div class="w-6 h-6 rounded-full bg-warning flex items-center justify-center flex-shrink-0 z-10">
+                      <span class="material-symbols-outlined text-white text-[14px]">upload_file</span>
+                    </div>
+                    <div class="flex-1 pb-6">
+                      <div class="flex items-center gap-2">
+                        <p class="text-sm font-bold text-gray-900">Documento enviado</p>
+                        <span class="text-xs text-gray-400">10/01/2026, 11:20</span>
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">Comprovante de pagamento - Reforma Escritório</p>
+                    </div>
+                  </div>
+                  <!-- Item 5 -->
+                  <div class="flex gap-4">
+                    <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 z-10">
+                      <span class="material-symbols-outlined text-white text-[14px]">construction</span>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center gap-2">
+                        <p class="text-sm font-bold text-gray-900">Obra concluída</p>
+                        <span class="text-xs text-gray-400">10/01/2026, 10:00</span>
+                      </div>
+                      <p class="text-sm text-gray-500 mt-1">"Reforma Escritório" marcada como concluída</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloco de Endereço -->
+          <div class="bg-white rounded-3xl border border-border-light card-shadow p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+              <h2 class="text-xl font-bold text-gray-900">Endereço e Informações Adicionais</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <!-- Coluna 1: Endereço -->
+              <div class="flex flex-col gap-4">
+                <div>
+                  <p class="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">Endereço Completo</p>
+                  <p class="text-sm text-gray-900">Rua Exemplo, 123 - Jardim Paulista</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">CEP</p>
+                    <p class="text-sm text-gray-900">01234-567</p>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">Cidade / Estado</p>
+                    <p class="text-sm text-gray-900">São Paulo, SP</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Coluna 2: Observações -->
+              <div>
+                <p class="text-xs text-gray-500 font-medium uppercase tracking-wider mb-2">Observações</p>
+                <textarea
+                  class="w-full h-32 bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm text-gray-700 focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
+                  placeholder="Adicione observações sobre este cliente..."
+                >Cliente preferencial. Sempre solicita orçamentos detalhados antes de aprovar pagamentos.</textarea>
+                <div class="flex justify-end mt-4">
+                  <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Salvar Alterações
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript para Tabs -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // Função para ativar tab
+        function activateTab(tabName) {
+          // Remove active de todos os botões e conteúdos
+          tabBtns.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          // Ativa o botão e conteúdo correspondente
+          const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
+          const activeContent = document.getElementById(`tab-${tabName}`);
+
+          if (activeBtn && activeContent) {
+            activeBtn.classList.add('active');
+            activeContent.classList.add('active');
+
+            // Atualiza hash na URL
+            history.replaceState(null, null, `#${tabName}`);
+
+            // Salva no localStorage
+            localStorage.setItem('clienteDetalhesTab', tabName);
+          }
+        }
+
+        // Event listeners para os botões
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            activateTab(tabName);
+          });
+        });
+
+        // Verifica hash na URL ou localStorage ao carregar
+        const hash = window.location.hash.replace('#', '');
+        const savedTab = localStorage.getItem('clienteDetalhesTab');
+        const initialTab = hash || savedTab || 'obras';
+
+        activateTab(initialTab);
+
+        // Escuta mudanças no hash
+        window.addEventListener('hashchange', function() {
+          const newHash = window.location.hash.replace('#', '');
+          if (newHash) {
+            activateTab(newHash);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

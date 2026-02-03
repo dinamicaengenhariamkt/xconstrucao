@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>XCon - Nova Obra</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      .file-upload:hover .upload-icon {
+        background-color: #333333;
+        color: white;
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      /* Scrollbar invisível - aparece no hover */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      /* Firefox */
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img src="../../logo/logo-xconstrucao-horizontal.png" alt="XCon" class="h-12">
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="dashboard-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">dashboard</span>
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="minhas-obras-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">construction</span>
+              <span class="text-sm font-medium">Minhas Obras</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="nova-obra-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">add_circle</span>
+              <span class="text-sm font-semibold">Nova Obra</span>
+            </a>
+          </nav>
+          <!-- Banner Monetização Superior -->
+          <div class="px-6 mt-4 mb-4">
+            <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-sm border border-border-light hover:shadow-md transition-shadow">
+              <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300')"></div>
+              <div class="p-3">
+                <span class="bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Anúncio</span>
+                <p class="text-[10px] text-gray-400 mt-2">Por <span class="font-medium text-gray-500">Parceiro</span></p>
+                <p class="text-xs font-semibold text-gray-700 mt-1 line-clamp-2">Materiais de construção com até 30% de desconto</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="px-6 flex flex-col gap-4">
+          <div class="bg-primary/5 rounded-xl p-4">
+            <p class="text-xs font-bold text-primary mb-1">Upgrade de Plano</p>
+            <p class="text-[10px] text-gray-500 mb-3">
+              Obtenha acesso a relatorios avancados de IA.
+            </p>
+            <button
+              class="w-full py-2 bg-primary text-white text-[11px] font-bold rounded-lg uppercase tracking-wider"
+            >
+              Ver Planos
+            </button>
+          </div>
+          <div class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+              href="../q&a-contratante/q&a-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">help</span>
+              <span class="text-sm font-medium whitespace-nowrap">Perguntas Frequentes</span>
+            </a>
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">settings</span>
+              <span class="text-sm font-medium">Configuracoes</span>
+            </a>
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">logout</span>
+              <span class="text-sm font-medium">Sair</span>
+            </a>
+            <!-- Banner Monetização Inferior -->
+            <div class="mt-4">
+              <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-sm border border-border-light hover:shadow-md transition-shadow">
+                <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300')"></div>
+                <div class="p-3">
+                  <span class="bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Anúncio</span>
+                  <p class="text-[10px] text-gray-400 mt-2">Por <span class="font-medium text-gray-500">Loja Local</span></p>
+                  <p class="text-xs font-semibold text-gray-700 mt-1 line-clamp-2">Ferramentas profissionais na sua região</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+              <input class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400" placeholder="Buscar obras, documentos ou propostas..." type="text" />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">notifications</span>
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Roberto Gomes
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">Contratante</p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do contratante"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-10">
+          <!-- Page Heading -->
+          <div class="flex flex-col gap-2 mb-4">
+            <h1 class="text-5xl font-extrabold tracking-tighter text-[#101819] dark:text-white">Nova Obra</h1>
+            <p class="text-gray-500 mt-2 text-lg">Cadastre os principais dados do seu novo projeto. Voce podera complementar depois.</p>
+          </div>
+
+          <!-- Form Container -->
+          <form class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Card 1: Informacoes Gerais -->
+            <div class="bg-white dark:bg-background-dark rounded-3xl border border-gray-100 dark:border-gray-800 p-8 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 bg-primary/5 rounded-lg">
+                  <span class="material-symbols-outlined text-primary">info</span>
+                </div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">Informacoes Gerais</h2>
+              </div>
+
+              <div class="flex flex-col gap-6">
+                <!-- Nome da obra -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nome da obra</label>
+                  <input
+                    type="text"
+                    placeholder="Ex: Residencia Aurora, Edificio Comercial Centro..."
+                    class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                  />
+                </div>
+
+                <!-- Tipo de obra -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tipo de obra</label>
+                  <select class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300">
+                    <option value="">Selecione o tipo...</option>
+                    <option value="residencial">Residencial</option>
+                    <option value="comercial">Comercial</option>
+                    <option value="corporativa">Corporativa</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="reforma">Reforma</option>
+                    <option value="ampliacao">Ampliacao</option>
+                  </select>
+                </div>
+
+                <!-- Descricao breve -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Descricao breve</label>
+                  <textarea
+                    rows="3"
+                    placeholder="Descreva brevemente o projeto, objetivos principais, caracteristicas especiais..."
+                    class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400 resize-none"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Localizacao -->
+            <div class="bg-white dark:bg-background-dark rounded-3xl border border-gray-100 dark:border-gray-800 p-8 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 bg-blue-50 rounded-lg">
+                  <span class="material-symbols-outlined text-blue-600">location_on</span>
+                </div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">Localizacao</h2>
+              </div>
+
+              <div class="flex flex-col gap-6">
+                <!-- Endereco + Numero -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_120px] gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Endereco</label>
+                    <input
+                      type="text"
+                      placeholder="Rua, Avenida..."
+                      class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Numero</label>
+                    <input
+                      type="text"
+                      placeholder="123"
+                      class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                    />
+                  </div>
+                </div>
+
+                <!-- Bairro -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Bairro</label>
+                  <input
+                    type="text"
+                    placeholder="Nome do bairro"
+                    class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                  />
+                </div>
+
+                <!-- Cidade + Estado -->
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_120px] gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Cidade</label>
+                    <input
+                      type="text"
+                      placeholder="Nome da cidade"
+                      class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Estado</label>
+                    <select class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300">
+                      <option value="">UF</option>
+                      <option value="AC">AC</option>
+                      <option value="AL">AL</option>
+                      <option value="AP">AP</option>
+                      <option value="AM">AM</option>
+                      <option value="BA">BA</option>
+                      <option value="CE">CE</option>
+                      <option value="DF">DF</option>
+                      <option value="ES">ES</option>
+                      <option value="GO">GO</option>
+                      <option value="MA">MA</option>
+                      <option value="MT">MT</option>
+                      <option value="MS">MS</option>
+                      <option value="MG">MG</option>
+                      <option value="PA">PA</option>
+                      <option value="PB">PB</option>
+                      <option value="PR">PR</option>
+                      <option value="PE">PE</option>
+                      <option value="PI">PI</option>
+                      <option value="RJ">RJ</option>
+                      <option value="RN">RN</option>
+                      <option value="RS">RS</option>
+                      <option value="RO">RO</option>
+                      <option value="RR">RR</option>
+                      <option value="SC">SC</option>
+                      <option value="SP">SP</option>
+                      <option value="SE">SE</option>
+                      <option value="TO">TO</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- CEP -->
+                <div class="max-w-xs">
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">CEP</label>
+                  <input
+                    type="text"
+                    placeholder="00000-000"
+                    class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Escopo e Fases - Estado PULADO -->
+            <div class="bg-white dark:bg-background-dark rounded-3xl border border-gray-100 dark:border-gray-800 p-8 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="p-2 bg-gray-100 rounded-lg">
+                    <span class="material-symbols-outlined text-gray-400">layers</span>
+                  </div>
+                  <h2 class="text-lg font-bold text-gray-400">Escopo e Fases</h2>
+                </div>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" checked class="w-4 h-4 rounded border-gray-300 text-gray-500 focus:ring-gray-400" />
+                  <span class="text-sm font-medium text-gray-500">Pular esta etapa</span>
+                </label>
+              </div>
+
+              <!-- Banner de etapa pulada -->
+              <div class="bg-gray-100 border border-gray-200 rounded-xl p-3 mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-gray-500">schedule</span>
+                <span class="text-sm text-gray-600">Esta etapa foi pulada e podera ser preenchida posteriormente.</span>
+              </div>
+
+              <div class="flex flex-col gap-6 opacity-50 pointer-events-none">
+                <!-- Tipo de escopo + Area -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Tipo de escopo</label>
+                    <select class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300">
+                      <option value="">Selecione...</option>
+                      <option value="completa">Obra completa</option>
+                      <option value="estrutura-acabamentos">Estrutura + acabamentos</option>
+                      <option value="reforma-parcial">Reforma parcial</option>
+                      <option value="retrofit">Retrofit</option>
+                      <option value="outro">Outro</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Area aproximada (m2)</label>
+                    <input
+                      type="number"
+                      placeholder="Ex: 350"
+                      class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                    />
+                  </div>
+                </div>
+
+                <!-- Nivel de acabamento -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nivel de acabamento</label>
+                  <select class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300">
+                    <option value="">Selecione...</option>
+                    <option value="basico">Basico</option>
+                    <option value="intermediario">Intermediario</option>
+                    <option value="alto-padrao">Alto padrao</option>
+                  </select>
+                </div>
+
+                <!-- Fases previstas -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Fases previstas</label>
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/20" checked />
+                      <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Fundacao</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/20" checked />
+                      <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Estrutura</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/20" checked />
+                      <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Alvenaria</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/20" checked />
+                      <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Cobertura</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/20" checked />
+                      <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Instalacoes</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                      <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/20" checked />
+                      <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Acabamentos</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Observacoes do escopo -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Observacoes do escopo <span class="text-gray-400 font-normal">(opcional)</span></label>
+                  <textarea
+                    rows="3"
+                    placeholder="Restricoes, peculiaridades do terreno, exigencias especificas..."
+                    class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400 resize-none"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Prazo e Orcamento - Estado NORMAL -->
+            <div class="bg-white dark:bg-background-dark rounded-3xl border border-gray-100 dark:border-gray-800 p-8 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="p-2 bg-success/10 rounded-lg">
+                    <span class="material-symbols-outlined text-success">calendar_month</span>
+                  </div>
+                  <h2 class="text-lg font-bold text-gray-900 dark:text-white">Prazo e Orcamento</h2>
+                </div>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-gray-500 focus:ring-gray-400" />
+                  <span class="text-sm font-medium text-gray-400">Pular esta etapa</span>
+                </label>
+              </div>
+
+              <div class="flex flex-col gap-6">
+                <!-- Datas -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Data estimada de inicio</label>
+                    <input
+                      type="date"
+                      class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Data estimada de entrega</label>
+                    <input
+                      type="date"
+                      class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300"
+                    />
+                  </div>
+                </div>
+
+                <!-- Faixa de orcamento + Valor -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Faixa de orcamento</label>
+                    <select class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 text-gray-700 dark:text-gray-300">
+                      <option value="">Selecione...</option>
+                      <option value="ate-500k">Ate R$ 500 mil</option>
+                      <option value="500k-1m">R$ 500 mil - R$ 1 milhao</option>
+                      <option value="1m-3m">R$ 1 milhao - R$ 3 milhoes</option>
+                      <option value="acima-3m">Acima de R$ 3 milhoes</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Orcamento estimado <span class="text-gray-400 font-normal">(opcional)</span></label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">R$</span>
+                      <input
+                        type="text"
+                        placeholder="0,00"
+                        class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Contato e Documentos -->
+            <div class="lg:col-span-2 bg-white dark:bg-background-dark rounded-3xl border border-gray-100 dark:border-gray-800 p-8 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 bg-amber-50 rounded-lg">
+                  <span class="material-symbols-outlined text-amber-600">contact_page</span>
+                </div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">Contato e Documentos Iniciais</h2>
+              </div>
+
+              <div class="flex flex-col gap-8">
+                <!-- Sub-secao: Contato principal -->
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-gray-400">person</span>
+                    Contato principal
+                  </h3>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nome</label>
+                      <input
+                        type="text"
+                        placeholder="Nome completo"
+                        class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Telefone</label>
+                      <input
+                        type="tel"
+                        placeholder="(00) 00000-0000"
+                        class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">E-mail</label>
+                      <input
+                        type="email"
+                        placeholder="email@exemplo.com"
+                        class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sub-secao: Documentos iniciais -->
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-gray-400">folder</span>
+                    Documentos iniciais <span class="text-gray-400 font-normal">(opcional)</span>
+                  </h3>
+
+                  <label class="file-upload flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-2xl cursor-pointer hover:border-primary/40 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all">
+                    <div class="upload-icon size-14 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-3 transition-all">
+                      <span class="material-symbols-outlined text-2xl text-gray-400">upload_file</span>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Anexar briefing, planta ou referencias</span>
+                    <span class="text-xs text-gray-400 mt-1">PDF, JPG, PNG ou DWG ate 25MB</span>
+                    <input type="file" class="hidden" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg" />
+                  </label>
+                  <p class="text-xs text-gray-400 mt-3">Voce podera adicionar mais documentos depois.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="lg:col-span-2 flex items-center justify-end gap-4 pt-4">
+              <a href="minhas-obras-contratante.html" class="px-6 py-3 text-sm font-bold text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors">
+                Cancelar
+              </a>
+              <button type="submit" class="px-8 py-3 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary/90 transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">add_circle</span>
+                Cadastrar obra
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

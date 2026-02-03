@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>XCon - Perguntas Frequentes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details[open] .accordion-icon {
+        transform: rotate(180deg);
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      /* Scrollbar invisível - aparece no hover */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      /* Firefox */
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img src="../../logo/logo-xconstrucao-horizontal.png" alt="XCon" class="h-12">
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="../dashboard-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">dashboard</span>
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="../minhas-obras-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">construction</span>
+              <span class="text-sm font-medium">Minhas Obras</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="../nova-obra-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">add_circle</span>
+              <span class="text-sm font-medium">Nova Obra</span>
+            </a>
+          </nav>
+          <!-- Banner Monetização Superior -->
+          <div class="px-6 mt-4 mb-4">
+            <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-sm border border-border-light hover:shadow-md transition-shadow">
+              <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300')"></div>
+              <div class="p-3">
+                <span class="bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Anúncio</span>
+                <p class="text-[10px] text-gray-400 mt-2">Por <span class="font-medium text-gray-500">Parceiro</span></p>
+                <p class="text-xs font-semibold text-gray-700 mt-1 line-clamp-2">Materiais de construção com até 30% de desconto</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="px-6 flex flex-col gap-4">
+          <div class="bg-primary/5 rounded-xl p-4">
+            <p class="text-xs font-bold text-primary mb-1">Upgrade de Plano</p>
+            <p class="text-[10px] text-gray-500 mb-3">
+              Obtenha acesso a relatorios avancados de IA.
+            </p>
+            <button
+              class="w-full py-2 bg-primary text-white text-[11px] font-bold rounded-lg uppercase tracking-wider"
+            >
+              Ver Planos
+            </button>
+          </div>
+          <div class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="q&a-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">help</span>
+              <span class="text-sm font-semibold">Perguntas Frequentes</span>
+            </a>
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">settings</span>
+              <span class="text-sm font-medium">Configuracoes</span>
+            </a>
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">logout</span>
+              <span class="text-sm font-medium">Sair</span>
+            </a>
+            <!-- Banner Monetização Inferior -->
+            <div class="mt-4">
+              <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-sm border border-border-light hover:shadow-md transition-shadow">
+                <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300')"></div>
+                <div class="p-3">
+                  <span class="bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Anúncio</span>
+                  <p class="text-[10px] text-gray-400 mt-2">Por <span class="font-medium text-gray-500">Loja Local</span></p>
+                  <p class="text-xs font-semibold text-gray-700 mt-1 line-clamp-2">Ferramentas profissionais na sua região</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <!-- Search -->
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                placeholder="Buscar obras, documentos..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">notifications</span>
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Roberto Gomes
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">Contratante</p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do contratante"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-10">
+
+          <!-- Hero Section -->
+          <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-5xl font-extrabold tracking-tighter text-[#101819] dark:text-white mb-4">Perguntas Frequentes</h1>
+            <p class="text-gray-500 text-lg mb-8">Encontre respostas rapidas sobre a plataforma, gestao de obras e processos.</p>
+
+            <!-- Search Bar -->
+            <div class="relative max-w-2xl mx-auto">
+              <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+              <input
+                type="text"
+                placeholder="Buscar por palavra-chave..."
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-2xl pl-12 pr-4 py-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="flex flex-wrap justify-center gap-3">
+            <button class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold shadow-sm">Todas</button>
+            <button class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors">Para Contratantes</button>
+            <button class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors">Para Empreiteiros</button>
+            <button class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors">Sobre a Plataforma</button>
+          </div>
+
+          <!-- Categories Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Category 1: Cadastro -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl group-hover:bg-blue-100 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-blue-600">account_circle</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Cadastro e Primeiros Passos</h3>
+                  <p class="text-xs text-gray-500">9 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 2: Gestao de Obras -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl group-hover:bg-amber-100 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-amber-600">construction</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Gestao de Obras</h3>
+                  <p class="text-xs text-gray-500">12 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 3: Financeiro -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-success/10 dark:bg-success/20 rounded-xl group-hover:bg-success/20 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-success">payments</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Financeiro e Pagamentos</h3>
+                  <p class="text-xs text-gray-500">11 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 4: Documentos -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl group-hover:bg-purple-100 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-purple-600">description</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Documentos e Contratos</h3>
+                  <p class="text-xs text-gray-500">11 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 5: Notificacoes -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl group-hover:bg-red-100 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-red-500">notifications</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Notificacoes e Atualizacoes</h3>
+                  <p class="text-xs text-gray-500">8 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 6: Configuracoes -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl group-hover:bg-gray-200 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-gray-600">settings</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Configuracoes da Conta</h3>
+                  <p class="text-xs text-gray-500">5 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 7: Relacionamento -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl group-hover:bg-cyan-100 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-cyan-600">handshake</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Relacionamento Contratante x Empreiteiro</h3>
+                  <p class="text-xs text-gray-500">8 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 8: Seguranca -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl group-hover:bg-indigo-100 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-indigo-600">shield</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Seguranca e Privacidade</h3>
+                  <p class="text-xs text-gray-500">4 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+
+            <!-- Category 9: Sobre a Plataforma -->
+            <div class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-primary/5 rounded-xl group-hover:bg-primary/10 transition-colors">
+                  <span class="material-symbols-outlined text-2xl text-primary">info</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Sobre a Plataforma</h3>
+                  <p class="text-xs text-gray-500">8 perguntas</p>
+                </div>
+                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors">chevron_right</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Sections -->
+          <div class="space-y-8 mt-4">
+
+            <!-- Section: Cadastro e Primeiros Passos -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-blue-50 rounded-lg">
+                  <span class="material-symbols-outlined text-blue-600">account_circle</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Cadastro e Primeiros Passos</h2>
+              </div>
+              <div class="space-y-3">
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Como faco meu cadastro na XCon?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Acesse a pagina inicial da XCon e clique em "Criar conta". Preencha seus dados pessoais, escolha seu perfil (Contratante ou Empreiteiro) e confirme seu e-mail. Em poucos minutos voce ja pode comecar a usar a plataforma.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Esqueci minha senha, como recupero?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Na tela de login, clique em "Esqueci minha senha". Informe o e-mail cadastrado e enviaremos um link para redefinir sua senha. O link expira em 24 horas.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm flex-1">Como cadastro minha primeira obra?</span>
+                    <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded uppercase mx-2">Contratante</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Acesse o menu lateral e clique em "Nova Obra". Preencha as informacoes basicas como nome, localizacao, tipo de obra, prazo estimado e orcamento. Voce pode adicionar documentos e detalhes depois. Ao finalizar, clique em "Cadastrar obra" e ela ficara disponivel para voce acompanhar no painel.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section: Gestao de Obras -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-amber-50 rounded-lg">
+                  <span class="material-symbols-outlined text-amber-600">construction</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Gestao de Obras</h2>
+              </div>
+              <div class="space-y-3">
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Como acompanho o progresso da obra em tempo real?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Acesse "Minhas Obras" no menu lateral e clique na obra desejada. Voce vera um painel completo com o progresso geral, linha do tempo, fotos recentes e indicadores de desempenho. As informacoes sao atualizadas conforme o empreiteiro registra avancos.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">O que significa "percentual previsto" vs "percentual concluido"?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    O <strong>percentual previsto</strong> e o que deveria estar pronto de acordo com o cronograma original. Ja o <strong>percentual concluido</strong> e o que realmente foi executado ate o momento. Se o percentual concluido estiver abaixo do previsto, a obra pode estar atrasada.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm flex-1">Como atualizo o progresso da obra?</span>
+                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase mx-2">Empreiteiro</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Entre na obra desejada e clique em "Atualizar progresso". Voce pode marcar etapas concluidas, enviar fotos, adicionar observacoes e atualizar o percentual executado. Essas informacoes ficam visiveis para o contratante em tempo real.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section: Financeiro -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-success/10 rounded-lg">
+                  <span class="material-symbols-outlined text-success">payments</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Financeiro e Pagamentos</h2>
+              </div>
+              <div class="space-y-3">
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Como funciona o pagamento das medicoes?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    O empreiteiro envia uma medicao com os servicos executados. O contratante revisa, aprova ou solicita ajustes. Apos aprovacao, o pagamento e liberado conforme o cronograma financeiro acordado no contrato.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm flex-1">Como aprovo uma medicao enviada pelo empreiteiro?</span>
+                    <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded uppercase mx-2">Contratante</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Quando o empreiteiro envia uma medicao, voce recebe uma notificacao. Acesse a aba "Financeiro" dentro da obra, revise os itens medidos, confira as fotos e documentos anexados e clique em "Aprovar medicao". O pagamento sera liberado conforme o cronograma financeiro acordado.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">A plataforma cobra taxa sobre os pagamentos?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Depende do plano contratado. No plano gratuito, ha uma pequena taxa sobre transacoes financeiras. Nos planos pagos, a taxa e reduzida ou eliminada. Consulte a pagina de Planos para mais detalhes.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section: Documentos -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-purple-50 rounded-lg">
+                  <span class="material-symbols-outlined text-purple-600">description</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Documentos e Contratos</h2>
+              </div>
+              <div class="space-y-3">
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Quais documentos posso anexar na plataforma?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Voce pode anexar diversos tipos de documentos: plantas, projetos arquitetonicos, cronogramas, contratos, ART/RRT, fotos da obra, relatorios e muito mais. Formatos aceitos: PDF, JPG, PNG, DWG, DOC e XLS.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm flex-1">Preciso enviar ART/RRT pela plataforma?</span>
+                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase mx-2">Empreiteiro</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Sim. A ART (Anotacao de Responsabilidade Tecnica) ou RRT (Registro de Responsabilidade Tecnica) deve ser anexada na secao de Documentos da obra. Isso garante a regularidade tecnica do projeto e e exigido por lei.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Posso baixar todos os documentos de uma vez?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Sim. Na secao Documentos de cada obra, ha um botao "Baixar todos os documentos" que gera um arquivo .zip com todos os arquivos anexados.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section: Sobre a Plataforma -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-primary/5 rounded-lg">
+                  <span class="material-symbols-outlined text-primary">info</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Sobre a Plataforma</h2>
+              </div>
+              <div class="space-y-3">
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">O que e a XCon?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    A XCon e uma plataforma de gestao de obras que conecta contratantes e empreiteiros. Oferecemos ferramentas para acompanhamento de progresso, gestao financeira, documentacao e comunicacao, tudo em um so lugar.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">A plataforma e gratuita?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Sim, oferecemos um plano gratuito com funcionalidades basicas. Para recursos avancados como relatorios de IA, integracao com sistemas externos e suporte prioritario, temos planos pagos. Consulte a pagina de Planos para mais detalhes.
+                  </div>
+                </details>
+                <details class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                  <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none">
+                    <span class="font-semibold text-gray-900 dark:text-white text-sm">Como entro em contato com o suporte?</span>
+                    <span class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200">expand_more</span>
+                  </summary>
+                  <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+                    Clique no icone de chat no canto inferior direito da tela ou acesse Configuracoes > Suporte. Voce tambem pode enviar um e-mail para <strong>suporte@xcon.com.br</strong>. Nosso time responde em ate 24 horas.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CTA Section -->
+          <div class="bg-primary rounded-3xl p-8 md:p-12 text-center mt-8">
+            <div class="max-w-2xl mx-auto">
+              <span class="material-symbols-outlined text-5xl text-white/80 mb-4">support_agent</span>
+              <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">Nao encontrou o que procurava?</h2>
+              <p class="text-white/70 mb-6">Nossa equipe de suporte esta pronta para ajudar voce com qualquer duvida.</p>
+              <button class="px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">chat</span>
+                Falar com o suporte
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

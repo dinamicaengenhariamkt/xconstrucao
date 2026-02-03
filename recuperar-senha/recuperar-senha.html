@@ -1,0 +1,288 @@
+<!doctype html>
+<html class="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Recuperar Senha - XCon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-dark": "#2A2D30",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.6rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      .dark .glass-nav {
+        background-color: rgba(28, 31, 34, 0.7);
+      }
+      .subtle-shadow {
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#101819] dark:text-white transition-colors duration-300"
+  >
+    <!-- Fixed Glassmorphic Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-6"
+    >
+      <nav
+        class="glass-nav flex items-center justify-between w-full max-w-[1200px] px-8 py-3 rounded-full border border-white/20 dark:border-white/10 subtle-shadow"
+      >
+        <a href="../homepage/homepage.html">
+          <img
+            src="../logo/logo-xconstrucao-horizontal.png"
+            alt="XCon"
+            class="h-10"
+          />
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          <a
+            class="text-sm font-medium hover:opacity-70 transition-opacity"
+            href="../homepage/homepage.html#inicio"
+            >Início</a
+          >
+          <a
+            class="text-sm font-medium hover:opacity-70 transition-opacity"
+            href="../homepage/homepage.html#solucoes"
+            >Soluções</a
+          >
+          <a
+            class="text-sm font-medium hover:opacity-70 transition-opacity"
+            href="../homepage/homepage.html#projetos"
+            >Projetos</a
+          >
+        </div>
+        <div class="flex items-center">
+          <a
+            href="../acesso-plataforma/acesso-plataforma.html"
+            class="bg-primary text-white text-sm font-bold px-6 py-2 rounded-full hover:brightness-110 transition-all"
+          >
+            Acesso à Plataforma
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="relative pt-32 min-h-screen flex items-center justify-center px-6 py-16"
+    >
+      <!-- Card de Recuperar Senha -->
+      <div class="w-full max-w-md">
+        <!-- Estado: Formulario (padrao) -->
+        <div
+          id="form-state"
+          class="bg-white dark:bg-slate-900/50 rounded-3xl p-10 border border-slate-100 dark:border-slate-800 subtle-shadow"
+        >
+          <!-- Icone -->
+          <div class="flex justify-center mb-6">
+            <span class="material-symbols-outlined text-5xl text-primary"
+              >lock_reset</span
+            >
+          </div>
+
+          <!-- Titulo -->
+          <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tight mb-2">
+              Recuperar Senha
+            </h1>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+            >
+              Enviaremos um link de recuperação para seu email
+            </p>
+          </div>
+
+          <!-- Formulario -->
+          <form id="recovery-form" class="flex flex-col gap-5">
+            <!-- Email -->
+            <div>
+              <label
+                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email-input"
+                placeholder="seu@email.com"
+                class="w-full bg-gray-50 dark:bg-gray-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-slate-400 transition-all"
+              />
+            </div>
+
+            <!-- Botao Enviar -->
+            <button
+              type="submit"
+              class="w-full bg-primary text-white font-bold h-12 rounded-full hover:scale-[1.02] hover:brightness-110 transition-all mt-2"
+            >
+              Enviar link de recuperação
+            </button>
+          </form>
+
+          <!-- Link Voltar Login -->
+          <div class="text-center mt-6">
+            <a
+              href="../login/login.html"
+              class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              <span class="material-symbols-outlined text-lg">arrow_back</span>
+              Voltar para o login
+            </a>
+          </div>
+        </div>
+
+        <!-- Estado: Sucesso (oculto por padrao) -->
+        <div
+          id="success-state"
+          class="hidden bg-white dark:bg-slate-900/50 rounded-3xl p-10 border border-slate-100 dark:border-slate-800 subtle-shadow"
+        >
+          <!-- Card de Sucesso -->
+          <div
+            class="bg-success/10 dark:bg-success/20 border border-success/30 dark:border-success/30 rounded-xl p-6 mb-8"
+          >
+            <div class="text-center">
+              <span
+                class="material-symbols-outlined text-4xl text-success mb-3 block"
+                >check_circle</span
+              >
+              <h3 class="font-bold text-success dark:text-success mb-1">
+                Link enviado com sucesso!
+              </h3>
+              <p class="text-xs text-success dark:text-success">
+                Verifique seu email e siga as instruções.
+              </p>
+            </div>
+          </div>
+
+          <!-- Texto Explicativo -->
+          <div class="text-center mb-8">
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+            >
+              Enviamos um link de recuperação para
+              <strong
+                id="sent-email"
+                class="text-slate-700 dark:text-slate-300"
+              ></strong
+              >. O link expira em 24 horas.
+            </p>
+          </div>
+
+          <!-- Botao Reenviar -->
+          <button
+            id="resend-btn"
+            class="w-full border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold h-12 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+          >
+            Reenviar email
+          </button>
+
+          <!-- Link Voltar Login -->
+          <div class="text-center mt-6">
+            <a
+              href="../login/login.html"
+              class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              <span class="material-symbols-outlined text-lg">arrow_back</span>
+              Voltar para o login
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-100 dark:border-slate-800">
+      <div
+        class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <img
+          src="../logo/logo-xconstrucao-horizontal.png"
+          alt="XCon"
+          class="h-12"
+        />
+        <div class="text-xs text-slate-400 font-medium">
+          © 2026 xconstrução.lab. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript para alternar estados -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const formState = document.getElementById("form-state");
+        const successState = document.getElementById("success-state");
+        const recoveryForm = document.getElementById("recovery-form");
+        const emailInput = document.getElementById("email-input");
+        const sentEmail = document.getElementById("sent-email");
+        const resendBtn = document.getElementById("resend-btn");
+
+        recoveryForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = emailInput.value;
+          if (email) {
+            // Mostra estado de sucesso
+            sentEmail.textContent = email;
+            formState.classList.add("hidden");
+            successState.classList.remove("hidden");
+          }
+        });
+
+        resendBtn.addEventListener("click", function () {
+          // Simula reenvio
+          resendBtn.textContent = "Email reenviado!";
+          resendBtn.disabled = true;
+          resendBtn.classList.add("opacity-50");
+
+          setTimeout(function () {
+            resendBtn.textContent = "Reenviar email";
+            resendBtn.disabled = false;
+            resendBtn.classList.remove("opacity-50");
+          }, 3000);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1382 @@
+<!doctype html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>XCon - Perguntas Frequentes do Administrador</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details[open] .accordion-icon {
+        transform: rotate(180deg);
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img
+              src="../../logo/logo-xconstrucao-horizontal.png"
+              alt="XCon"
+              class="h-12"
+            />
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >dashboard</span
+              >
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">person</span>
+              <span class="text-sm font-medium">Cliente</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >engineering</span
+              >
+              <span class="text-sm font-medium">Empreiteira</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >payments</span
+              >
+              <span class="text-sm font-medium">Financeiro</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >account_balance_wallet</span
+              >
+              <span class="text-sm font-medium">Caixa</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >trending_up</span
+              >
+              <span class="text-sm font-medium">Entradas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >trending_down</span
+              >
+              <span class="text-sm font-medium">Saidas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">campaign</span>
+              <span class="text-sm font-medium">Anúncios</span>
+            </a>
+          </nav>
+        </div>
+        <div class="px-6 flex flex-col gap-1">
+          <a
+            class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">help</span>
+            <span class="text-sm font-semibold">Perguntas Frequentes</span>
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">settings</span>
+            <span class="text-sm font-medium">Configuracoes</span>
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">logout</span>
+            <span class="text-sm font-medium">Sair</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                placeholder="Buscar clientes, empreiteiras ou lancamentos..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >notifications</span
+              >
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Rafael Santos
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">
+                  Administrador
+                </p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do administrador"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-10">
+          <!-- Hero Section -->
+          <div class="text-center max-w-3xl mx-auto">
+            <h1
+              class="text-5xl font-extrabold tracking-tighter text-[#101819] dark:text-white mb-4"
+            >
+              Perguntas Frequentes do Administrador
+            </h1>
+            <p class="text-gray-500 text-lg mb-8">
+              Respostas rapidas para a gestao de clientes, empreiteiras,
+              financeiro e operacao da plataforma.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="relative max-w-2xl mx-auto">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                type="text"
+                placeholder="Buscar por palavra-chave (cliente, empreiteira, financeiro...)"
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-2xl pl-12 pr-4 py-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="flex flex-wrap justify-center gap-3">
+            <button
+              class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold shadow-sm"
+            >
+              Todas
+            </button>
+            <button
+              class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors"
+            >
+              Clientes
+            </button>
+            <button
+              class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors"
+            >
+              Empreiteiras
+            </button>
+            <button
+              class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors"
+            >
+              Financeiro &amp; Caixa
+            </button>
+            <button
+              class="px-5 py-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-50 transition-colors"
+            >
+              Operacao da Plataforma
+            </button>
+          </div>
+
+          <!-- Categories Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Category 1: Cadastro e Gestao de Usuarios -->
+            <div
+              class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl group-hover:bg-blue-100 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-2xl text-blue-600"
+                    >group</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    Cadastro e Gestao de Usuarios
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    Clientes, empreiteiras e administradores internos.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">5 perguntas</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+
+            <!-- Category 2: Clientes (Contratantes) -->
+            <div
+              class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl group-hover:bg-amber-100 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-2xl text-amber-600"
+                    >person</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    Clientes (Contratantes)
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    Cadastro, status, obras e relacionamento.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">5 perguntas</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+
+            <!-- Category 3: Empreiteiras -->
+            <div
+              class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 bg-success/10 dark:bg-success/20 rounded-xl group-hover:bg-success/20 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-2xl text-success"
+                    >engineering</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    Empreiteiras
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    Curadoria, aprovacao, bloqueios e obras vinculadas.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">5 perguntas</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+
+            <!-- Category 4: Financeiro e Caixa -->
+            <div
+              class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl group-hover:bg-purple-100 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-2xl text-purple-600"
+                    >account_balance_wallet</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    Financeiro e Caixa
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    Entradas, saidas, taxas e fluxo de caixa.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">5 perguntas</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+
+            <!-- Category 5: Obras e Operacao -->
+            <div
+              class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl group-hover:bg-red-100 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-2xl text-red-500"
+                    >construction</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    Obras e Operacao
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    Vinculo cliente-empreiteira, risco, status de obras.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">4 perguntas</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+
+            <!-- Category 6: Configuracoes da Plataforma -->
+            <div
+              class="bg-white dark:bg-background-dark rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:border-primary/30 hover:-translate-y-1 transition-all cursor-pointer group"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl group-hover:bg-gray-200 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-2xl text-gray-600"
+                    >settings</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <h3
+                    class="text-lg font-bold text-gray-900 dark:text-white mb-1"
+                  >
+                    Configuracoes da Plataforma
+                  </h3>
+                  <p class="text-xs text-gray-500">
+                    Planos, parametros, integracoes e seguranca.
+                  </p>
+                  <p class="text-xs text-gray-400 mt-1">4 perguntas</p>
+                </div>
+                <span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Sections -->
+          <div class="space-y-8 mt-4">
+            <!-- Section 1: Cadastro e Gestao de Usuarios -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-blue-50 rounded-lg">
+                  <span class="material-symbols-outlined text-blue-600"
+                    >group</span
+                  >
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Cadastro e Gestao de Usuarios
+                </h2>
+              </div>
+              <div class="space-y-3">
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como cadastro um novo administrador na plataforma?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    O acesso de administrador e criado a partir de
+                    <strong>Configuracoes &gt; Usuarios do time</strong>. Ao
+                    adicionar um novo membro, voce pode definir o nivel de
+                    permissao (acesso total, apenas financeiro, apenas operacao,
+                    entre outros). Cada administrador utiliza seu proprio e-mail
+                    pessoal ou corporativo para acessar a plataforma.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Qual a diferenca entre cliente, empreiteira e
+                      administrador?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    <strong>Cliente (Contratante):</strong> e o dono da obra,
+                    responsavel pelo orcamento e pelas decisoes do projeto.
+                    <strong>Empreiteira:</strong> e a executora dos servicos,
+                    responsavel por medicoes e pelo progresso fisico da obra.
+                    <strong>Administrador:</strong> e o usuario interno da
+                    XConstrucao que gerencia toda a operacao na plataforma,
+                    incluindo clientes, empreiteiras, financeiro e
+                    configuracoes.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Posso desativar temporariamente um usuario sem apagar os
+                      dados?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Sim. Basta alterar o status do usuario para
+                    <strong>Inativo</strong> ou <strong>Bloqueado</strong>. Todo
+                    o historico de obras, contratos e financeiro permanece
+                    intacto na plataforma. Apenas o login do usuario e impedido,
+                    podendo ser reativado a qualquer momento.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como redefinir a senha de um usuario manualmente?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    No painel do administrador, localize o usuario desejado
+                    (cliente ou empreiteira) e utilize a acao
+                    <strong>Resetar senha</strong>. A plataforma dispara
+                    automaticamente um e-mail de redefinicao para o endereco
+                    cadastrado do usuario.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Posso limitar quais obras um administrador interno
+                      enxerga?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Sim. A plataforma oferece papeis diferenciados, como
+                    <strong>admin financeiro</strong> e
+                    <strong>admin operacao</strong>. Cada papel define quais
+                    modulos e obras o administrador pode visualizar. Por padrao,
+                    o administrador com acesso total enxerga todas as obras e
+                    dados da plataforma.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section 2: Clientes (Contratantes) -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-amber-50 rounded-lg">
+                  <span class="material-symbols-outlined text-amber-600"
+                    >person</span
+                  >
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Clientes (Contratantes)
+                </h2>
+              </div>
+              <div class="space-y-3">
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como cadastrar um novo cliente pelo painel do
+                      administrador?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Acesse a tela <strong>Clientes</strong> no menu lateral e
+                    clique em <strong>"Cadastrar novo cliente"</strong>.
+                    Preencha os campos obrigatorios: dados de contato, tipo de
+                    pessoa (PF ou PJ), CPF/CNPJ, e-mail, telefone e status
+                    inicial. Apos salvar, o cliente ja aparece na listagem e
+                    pode ser vinculado a obras.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >O que significa o status do cliente (Ativo, Em analise,
+                      Bloqueado)?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    <strong>Ativo:</strong> o cliente pode acessar a plataforma,
+                    criar e acompanhar obras normalmente.
+                    <strong>Em analise:</strong> o cadastro esta pendente de
+                    validacao interna (documentos, credito ou outra
+                    verificacao). <strong>Bloqueado:</strong> o acesso ao painel
+                    esta impedido, normalmente por inadimplencia, suspeita de
+                    fraude ou encerramento de contrato.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como vejo todas as obras vinculadas a um cliente?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Na tela <strong>Clientes</strong>, localize o cliente
+                    desejado e clique em <strong>"Ver obras"</strong>. A tela
+                    mostra todas as obras associadas a ele: ativas, concluidas,
+                    canceladas, bem como o volume financeiro total movimentado.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Consigo editar os dados de um cliente apos o
+                      cadastro?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Sim. Acesse o perfil do cliente via
+                    <strong>"Ver detalhes"</strong> e clique no botao
+                    <strong>Editar dados</strong>. Alteracoes em campos criticos
+                    como CPF ou CNPJ podem exigir uma validacao adicional antes
+                    de serem salvas.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >O que acontece se eu excluir um cliente?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    A plataforma nao permite a exclusao total de clientes que
+                    possuem obras ou historico financeiro. Nesses casos, o
+                    cliente e <strong>desativado</strong>, mantendo todos os
+                    registros para fins de auditoria e relatorios. Apenas o
+                    acesso a plataforma e removido.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section 3: Empreiteiras -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-success/10 rounded-lg">
+                  <span class="material-symbols-outlined text-success"
+                    >engineering</span
+                  >
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Empreiteiras
+                </h2>
+              </div>
+              <div class="space-y-3">
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como cadastrar uma nova empreiteira?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Acesse a tela <strong>Empreiteiras</strong> no menu lateral
+                    e clique em <strong>"Cadastrar nova empreiteira"</strong>.
+                    Preencha os campos importantes: razao social, CNPJ,
+                    responsavel tecnico, registro CREA/CAU, contatos e
+                    especialidades. Apos o cadastro, a empreiteira entra em
+                    analise ate a validacao dos documentos.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >O que significa uma empreiteira "Verificada" ou "Em
+                      analise"?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    <strong>Verificada:</strong> todos os documentos e dados do
+                    responsavel tecnico foram conferidos e aprovados. A
+                    empreiteira pode ser vinculada a novas obras.
+                    <strong>Em analise:</strong> a documentacao esta em processo
+                    de revisao. <strong>Bloqueada:</strong> a empreiteira nao
+                    pode ser vinculada a novas obras, geralmente por problema
+                    contratual ou tecnico.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como vejo todas as obras em que uma empreiteira
+                      atua?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Na tela <strong>Empreiteiras</strong>, clique no botao
+                    <strong>"Ver obras"</strong> na linha da empreiteira
+                    desejada. Alem de listar as obras ativas e concluidas, a
+                    tela permite avaliar indicadores de risco como quantidade de
+                    obras simultaneas, atrasos e concentracao em um unico
+                    cliente.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Posso bloquear uma empreiteira para novas
+                      contratacoes?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Sim. Acesse <strong>"Ver detalhes"</strong> da empreiteira e
+                    utilize a acao de <strong>bloqueio</strong>. A empreiteira
+                    bloqueada nao aparecera nas novas propostas ou selecoes, mas
+                    permanece vinculada as obras ja em andamento, garantindo a
+                    continuidade dos servicos em execucao.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Consigo editar o responsavel tecnico cadastrado?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Sim. Acesse a ficha da empreiteira e altere os dados do
+                    responsavel tecnico (nome, registro profissional,
+                    especialidade). A plataforma mantem o historico das
+                    alteracoes para fins de rastreabilidade.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section 4: Financeiro e Caixa -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-purple-50 rounded-lg">
+                  <span class="material-symbols-outlined text-purple-600"
+                    >account_balance_wallet</span
+                  >
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Financeiro e Caixa
+                </h2>
+              </div>
+              <div class="space-y-3">
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Qual e a diferenca entre Financeiro, Caixa, Entradas e
+                      Saidas?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    <strong>Financeiro:</strong> oferece a visao macro de
+                    contratos, valores pagos, saldo a pagar e indicadores de
+                    risco. <strong>Caixa:</strong> mostra o fluxo de caixa e o
+                    saldo disponivel por periodo.
+                    <strong>Entradas:</strong> registra todas as receitas da
+                    plataforma (taxas, assinaturas, outros).
+                    <strong>Saidas:</strong> registra todos os pagamentos
+                    realizados (empreiteiras, reembolsos, custos operacionais).
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como a plataforma calcula o saldo de caixa exibido?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    O saldo de caixa e calculado com base na formula:
+                    <strong
+                      >saldo inicial + entradas confirmadas - saidas
+                      realizadas</strong
+                    >
+                    no periodo selecionado. Apenas transacoes liquidadas sao
+                    consideradas no calculo. Transacoes previstas ou agendadas
+                    aparecem separadamente como projecao futura.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >O que e uma "obra com risco financeiro"?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Uma obra e classificada com risco financeiro quando
+                    apresenta <strong>atraso de pagamentos</strong>,
+                    <strong
+                      >medicoes aprovadas sem pagamento correspondente</strong
+                    >
+                    ou <strong>orcamento estourado</strong> em relacao ao valor
+                    contratado. Esses indicadores aparecem destacados no painel
+                    Financeiro para que o administrador tome providencias.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Onde vejo os maiores clientes e empreiteiras por volume
+                      financeiro?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Na tela <strong>Financeiro</strong>, role ate os blocos
+                    <strong>"Top clientes por volume"</strong> e
+                    <strong>"Top empreiteiras por volume"</strong>. Esses
+                    rankings mostram os maiores parceiros em termos de
+                    movimentacao financeira no periodo selecionado.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como a plataforma calcula e registra as taxas da
+                      XConstrucao?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    As taxas da XConstrucao (sobre medicoes, assinaturas de
+                    planos, entre outros) sao calculadas automaticamente e
+                    aparecem registradas na secao <strong>Entradas</strong>. Os
+                    resumos de receita da plataforma tambem incluem essas taxas,
+                    permitindo ao administrador acompanhar a receita gerada em
+                    cada periodo.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section 5: Obras e Operacao -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-red-50 rounded-lg">
+                  <span class="material-symbols-outlined text-red-500"
+                    >construction</span
+                  >
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Obras e Operacao da Plataforma
+                </h2>
+              </div>
+              <div class="space-y-3">
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como vincular um cliente e uma empreiteira a uma mesma
+                      obra?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    O fluxo padrao e: a obra e criada pelo cliente (ou pelo
+                    admin em nome do cliente), depois a empreiteira e
+                    selecionada ou convocada para a obra. Se necessario, o
+                    administrador pode aprovar o vinculo entre cliente e
+                    empreiteira antes de formalizar a contratacao.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Posso trocar a empreiteira de uma obra em
+                      andamento?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    A troca de empreiteira durante uma obra em andamento e
+                    possivel em determinadas condicoes, como: obra sem medicoes
+                    em aberto, contratos permitindo substituicao e aprovacao do
+                    administrador. O historico da empreiteira anterior permanece
+                    registrado na obra para fins de rastreabilidade.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como o administrador acompanha obras em atraso?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    O painel do administrador oferece dashboards especificos de
+                    risco, onde e possivel visualizar
+                    <strong>obras atrasadas</strong>,
+                    <strong>divergencia entre previsto e executado</strong> e o
+                    <strong>historico de medicoes</strong>. Alertas automaticos
+                    tambem sao gerados quando uma obra ultrapassa os prazos
+                    definidos no cronograma.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >O que significam os indicadores de eficiencia da obra
+                      mostrados no painel?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Os indicadores incluem:
+                    <strong>eficiencia semanal</strong> (ritmo de execucao da
+                    obra),
+                    <strong>percentual de escopo executado</strong> (quanto do
+                    projeto ja foi concluido) e
+                    <strong>aderencia ao cronograma</strong> (se a obra esta
+                    dentro do prazo previsto). Esses indicadores ajudam o
+                    administrador a identificar rapidamente obras que precisam
+                    de atencao.
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Section 6: Configuracoes da Plataforma -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-gray-100 rounded-lg">
+                  <span class="material-symbols-outlined text-gray-600"
+                    >settings</span
+                  >
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
+                  Configuracoes da Plataforma
+                </h2>
+              </div>
+              <div class="space-y-3">
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Quais parametros globais o administrador pode
+                      configurar?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    O administrador pode configurar diversos parametros globais,
+                    como: <strong>prazos padrao de medicao</strong>,
+                    <strong>politicas de aprovacao</strong> (automatica ou
+                    manual), <strong>formatos de notificacoes</strong> (e-mail,
+                    push, SMS) e <strong>limites de credito</strong> para
+                    clientes. Essas configuracoes ficam em
+                    <strong>Configuracoes &gt; Parametros gerais</strong>.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como gerenciar planos e permissoes de uso da
+                      plataforma?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Em <strong>Configuracoes &gt; Planos</strong>, o
+                    administrador pode visualizar e gerenciar os planos
+                    disponiveis (gratuito e pagos). E possivel alterar o plano
+                    de um cliente, configurar permissoes de acesso por nivel de
+                    assinatura e acompanhar metricas de conversao entre planos.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Consigo personalizar os textos de e-mail/notificacao
+                      enviados aos usuarios?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    Sim. Acesse
+                    <strong>Configuracoes &gt; Comunicacao</strong> para
+                    visualizar e editar os templates de e-mail e notificacoes
+                    enviados automaticamente pela plataforma. Voce pode ajustar
+                    o texto, o assunto e as variaveis dinamicas (nome do
+                    usuario, nome da obra, etc.) de cada template.
+                  </div>
+                </details>
+                <details
+                  class="group bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                >
+                  <summary
+                    class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors list-none"
+                  >
+                    <span
+                      class="font-semibold text-gray-900 dark:text-white text-sm"
+                      >Como auditar as acoes feitas pelos administradores
+                      internos?</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-gray-400 accordion-icon transition-transform duration-200"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <div
+                    class="px-5 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4"
+                  >
+                    A plataforma conta com um
+                    <strong>log de auditoria</strong> acessivel em
+                    <strong>Configuracoes &gt; Auditoria</strong>. Nele, e
+                    possivel consultar todas as acoes realizadas por
+                    administradores: quem bloqueou um usuario, quem editou um
+                    cadastro, quem aprovou uma medicao, entre outras acoes
+                    criticas. O log registra data, hora, autor e descricao de
+                    cada acao.
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="bg-primary rounded-3xl p-8 md:p-12 text-center mt-8">
+            <div class="max-w-2xl mx-auto">
+              <span
+                class="material-symbols-outlined text-5xl text-white/80 mb-4"
+                >support_agent</span
+              >
+              <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                Ainda tem duvidas sobre a gestao da plataforma?
+              </h2>
+              <p class="text-white/70 mb-6">
+                Nossa equipe esta pronta para apoiar sua operacao como
+                administrador.
+              </p>
+              <button
+                class="px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-lg">chat</span>
+                Falar com o suporte administrativo
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

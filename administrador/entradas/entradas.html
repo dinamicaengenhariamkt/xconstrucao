@@ -1,0 +1,1210 @@
+<!doctype html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Entradas - Administrador XCon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img
+              src="../../logo/logo-xconstrucao-horizontal.png"
+              alt="XCon"
+              class="h-12"
+            />
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >dashboard</span
+              >
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">person</span>
+              <span class="text-sm font-medium">Cliente</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >engineering</span
+              >
+              <span class="text-sm font-medium">Empreiteira</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >payments</span
+              >
+              <span class="text-sm font-medium">Financeiro</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >account_balance_wallet</span
+              >
+              <span class="text-sm font-medium">Caixa</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >trending_up</span
+              >
+              <span class="text-sm font-semibold">Entradas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >trending_down</span
+              >
+              <span class="text-sm font-medium">Saidas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">campaign</span>
+              <span class="text-sm font-medium">Anúncios</span>
+            </a>
+          </nav>
+        </div>
+        <div class="px-6 flex flex-col gap-1">
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">help</span>
+            <span class="text-sm font-medium whitespace-nowrap"
+              >Perguntas Frequentes</span
+            >
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">settings</span>
+            <span class="text-sm font-medium">Configurações</span>
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">logout</span>
+            <span class="text-sm font-medium">Sair</span>
+          </a>
+        </div>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                placeholder="Buscar clientes, empreiteiras ou lançamentos..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >notifications</span
+              >
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Rafael Santos
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">
+                  Administrador
+                </p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do administrador"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-8">
+
+          <!-- BLOCO 1: Header + Filtros globais -->
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+              <div>
+                <p class="text-sm font-bold text-success mb-1">Entradas cresceram 18,3% em relação aos 30 dias anteriores</p>
+                <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">
+                  Entradas
+                </h1>
+                <p class="text-gray-500 mt-1">
+                  Detalhamento das receitas da plataforma por período, origem e tipo.
+                </p>
+              </div>
+              <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-xl">
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                  >7 dias</span
+                >
+                <span
+                  class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg cursor-pointer"
+                  >Últimos 30 dias</span
+                >
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                  >3 meses</span
+                >
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                  >12 meses</span
+                >
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >calendar_today</span
+                  >
+                  Personalizado
+                </span>
+              </div>
+            </div>
+            <!-- Filtros adicionais -->
+            <div class="flex items-center gap-3">
+              <div class="relative">
+                <select class="appearance-none bg-gray-100 border-none rounded-xl pl-4 pr-10 py-2 text-sm font-medium text-gray-700 focus:ring-2 focus:ring-primary/20 cursor-pointer">
+                  <option>Origem: Todos</option>
+                  <option>Cliente</option>
+                  <option>Empreiteira</option>
+                  <option>Outros</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-[18px] pointer-events-none">expand_more</span>
+              </div>
+              <div class="relative">
+                <select class="appearance-none bg-gray-100 border-none rounded-xl pl-4 pr-10 py-2 text-sm font-medium text-gray-700 focus:ring-2 focus:ring-primary/20 cursor-pointer">
+                  <option>Tipo de receita: Todos</option>
+                  <option>Taxas sobre medições</option>
+                  <option>Assinatura</option>
+                  <option>Outros serviços</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-[18px] pointer-events-none">expand_more</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO 2: KPI Cards (6 cards) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 - Total de entradas -->
+            <div
+              class="bg-white p-8 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-success/10 text-success rounded-lg">
+                  <span class="material-symbols-outlined">trending_up</span>
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >+18,3% vs. anterior</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">
+                  Total de entradas
+                </p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">
+                  R$ 325.000
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 - Taxas sobre medições -->
+            <div
+              class="bg-white p-8 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-info/10 text-info rounded-lg">
+                  <span class="material-symbols-outlined">assessment</span>
+                </div>
+                <span
+                  class="text-info text-xs font-bold bg-info/10 px-2 py-1 rounded-full"
+                  >75,4% das entradas</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">
+                  Taxas sobre medições
+                </p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">
+                  R$ 245.000
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 - Assinaturas -->
+            <div
+              class="bg-white p-8 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-success/10 text-success rounded-lg">
+                  <span class="material-symbols-outlined">card_membership</span>
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >17,8% das entradas</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Assinaturas</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">
+                  R$ 58.000
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 - Outros serviços -->
+            <div
+              class="bg-white p-8 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-warning/10 text-warning rounded-lg">
+                  <span class="material-symbols-outlined">add_circle</span>
+                </div>
+                <span
+                  class="text-warning text-xs font-bold bg-warning/10 px-2 py-1 rounded-full"
+                  >6,8% das entradas</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Outros serviços</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">
+                  R$ 22.000
+                </p>
+              </div>
+            </div>
+            <!-- Card 5 - Ticket médio por cliente -->
+            <div
+              class="bg-white p-8 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-primary/10 text-primary rounded-lg">
+                  <span class="material-symbols-outlined">person</span>
+                </div>
+                <span
+                  class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded-full"
+                  >No período</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">
+                  Ticket médio por cliente
+                </p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">
+                  R$ 8.125
+                </p>
+              </div>
+            </div>
+            <!-- Card 6 - Ticket médio por obra -->
+            <div
+              class="bg-white p-8 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-info/10 text-info rounded-lg">
+                  <span class="material-symbols-outlined">apartment</span>
+                </div>
+                <span
+                  class="text-info text-xs font-bold bg-info/10 px-2 py-1 rounded-full"
+                  >No período</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">
+                  Ticket médio por obra
+                </p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">
+                  R$ 3.611
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO 3: Gráfico de barras empilhadas -->
+          <div
+            class="bg-white px-8 pt-8 pb-12 rounded-xl border border-border-light card-shadow"
+          >
+            <div class="flex justify-between items-center mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">
+                  Entradas ao longo do tempo
+                </h3>
+                <p class="text-sm text-gray-500">
+                  Distribuição diária das receitas no período
+                </p>
+              </div>
+            </div>
+            <!-- Legenda -->
+            <div class="flex items-center gap-6 mb-6">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-info rounded"></div>
+                <span class="text-xs font-medium text-gray-600">Taxas</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-success rounded"></div>
+                <span class="text-xs font-medium text-gray-600">Assinaturas</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-warning rounded"></div>
+                <span class="text-xs font-medium text-gray-600">Outros</span>
+              </div>
+            </div>
+            <div class="relative h-[280px] w-full">
+              <!-- Grid de fundo -->
+              <div
+                class="absolute inset-0 flex flex-col justify-between pointer-events-none"
+              >
+                <div class="border-t border-gray-50 w-full"></div>
+                <div class="border-t border-gray-50 w-full"></div>
+                <div class="border-t border-gray-50 w-full"></div>
+                <div class="border-t border-gray-100 w-full"></div>
+              </div>
+              <!-- SVG Stacked Bar Chart -->
+              <svg
+                class="w-full h-full"
+                viewBox="0 0 1100 280"
+                preserveAspectRatio="xMidYMax meet"
+              >
+                <!-- Bar 1 (dia 01) -->
+                <rect x="15" y="130" width="50" height="110" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="15" y="100" width="50" height="30" fill="#22846D"/>
+                <rect x="15" y="88" width="50" height="12" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 2 (dia 03) -->
+                <rect x="85" y="155" width="50" height="85" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="85" y="130" width="50" height="25" fill="#22846D"/>
+                <rect x="85" y="120" width="50" height="10" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 3 (dia 05) -->
+                <rect x="155" y="110" width="50" height="130" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="155" y="75" width="50" height="35" fill="#22846D"/>
+                <rect x="155" y="63" width="50" height="12" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 4 (dia 07) -->
+                <rect x="225" y="168" width="50" height="72" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="225" y="145" width="50" height="23" fill="#22846D"/>
+                <rect x="225" y="135" width="50" height="10" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 5 (dia 09) -->
+                <rect x="295" y="140" width="50" height="100" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="295" y="112" width="50" height="28" fill="#22846D"/>
+                <rect x="295" y="100" width="50" height="12" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 6 (dia 11) -->
+                <rect x="365" y="178" width="50" height="62" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="365" y="158" width="50" height="20" fill="#22846D"/>
+                <rect x="365" y="148" width="50" height="10" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 7 (dia 12) - maior dia -->
+                <rect x="435" y="52" width="50" height="188" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="435" y="10" width="50" height="42" fill="#22846D"/>
+                <rect x="435" y="0" width="50" height="10" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Label do dia 12 -->
+                <text x="460" y="-8" font-size="10" font-weight="700" fill="#333333" text-anchor="middle">R$ 48K</text>
+                <!-- Bar 8 (dia 14) -->
+                <rect x="505" y="150" width="50" height="90" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="505" y="124" width="50" height="26" fill="#22846D"/>
+                <rect x="505" y="114" width="50" height="10" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 9 (dia 16) -->
+                <rect x="575" y="185" width="50" height="55" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="575" y="167" width="50" height="18" fill="#22846D"/>
+                <rect x="575" y="158" width="50" height="9" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 10 (dia 18) -->
+                <rect x="645" y="125" width="50" height="115" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="645" y="93" width="50" height="32" fill="#22846D"/>
+                <rect x="645" y="82" width="50" height="11" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 11 (dia 20) -->
+                <rect x="715" y="165" width="50" height="75" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="715" y="144" width="50" height="21" fill="#22846D"/>
+                <rect x="715" y="135" width="50" height="9" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 12 (dia 22) -->
+                <rect x="785" y="142" width="50" height="98" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="785" y="115" width="50" height="27" fill="#22846D"/>
+                <rect x="785" y="105" width="50" height="10" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 13 (dia 24) -->
+                <rect x="855" y="162" width="50" height="78" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="855" y="140" width="50" height="22" fill="#22846D"/>
+                <rect x="855" y="131" width="50" height="9" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 14 (dia 26) -->
+                <rect x="925" y="135" width="50" height="105" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="925" y="105" width="50" height="30" fill="#22846D"/>
+                <rect x="925" y="94" width="50" height="11" rx="4" ry="4" fill="#F5A623"/>
+                <!-- Bar 15 (dia 28) -->
+                <rect x="995" y="172" width="50" height="68" rx="0" ry="0" fill="#1E88E5"/>
+                <rect x="995" y="152" width="50" height="20" fill="#22846D"/>
+                <rect x="995" y="143" width="50" height="9" rx="4" ry="4" fill="#F5A623"/>
+              </svg>
+              <!-- Labels do eixo X -->
+              <div class="flex justify-between mt-4 px-2">
+                <span class="text-[11px] font-bold text-gray-400">01</span>
+                <span class="text-[11px] font-bold text-gray-400">03</span>
+                <span class="text-[11px] font-bold text-gray-400">05</span>
+                <span class="text-[11px] font-bold text-gray-400">07</span>
+                <span class="text-[11px] font-bold text-gray-400">09</span>
+                <span class="text-[11px] font-bold text-gray-400">11</span>
+                <span class="text-[11px] font-bold text-gray-400">12</span>
+                <span class="text-[11px] font-bold text-gray-400">14</span>
+                <span class="text-[11px] font-bold text-gray-400">16</span>
+                <span class="text-[11px] font-bold text-gray-400">18</span>
+                <span class="text-[11px] font-bold text-gray-400">20</span>
+                <span class="text-[11px] font-bold text-gray-400">22</span>
+                <span class="text-[11px] font-bold text-gray-400">24</span>
+                <span class="text-[11px] font-bold text-gray-400">26</span>
+                <span class="text-[11px] font-bold text-gray-400">28</span>
+              </div>
+            </div>
+            <!-- Cards de insight -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="flex items-center gap-3 p-4 bg-info/5 rounded-xl">
+                <div class="p-2 bg-info/10 text-info rounded-lg">
+                  <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 font-medium">Maior dia de entrada</p>
+                  <p class="text-sm font-extrabold text-gray-900">12/06 — R$ 48.000</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 bg-warning/5 rounded-xl">
+                <div class="p-2 bg-warning/10 text-warning rounded-lg">
+                  <span class="material-symbols-outlined text-[20px]">event_busy</span>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 font-medium">Dias sem entrada</p>
+                  <p class="text-sm font-extrabold text-gray-900">3 dias no período</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO 4: Tabela de lançamentos -->
+          <div
+            class="bg-white rounded-xl border border-border-light card-shadow overflow-hidden"
+          >
+            <!-- Barra de filtros -->
+            <div
+              class="px-6 py-5 border-b border-gray-100 flex flex-col md:flex-row md:justify-between md:items-center gap-4"
+            >
+              <div class="flex items-center gap-3 flex-wrap">
+                <!-- Busca -->
+                <div class="relative">
+                  <span
+                    class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 text-[18px]"
+                    >search</span
+                  >
+                  <input
+                    class="bg-gray-100 border-none rounded-xl pl-9 pr-4 py-2 text-xs w-80 focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                    placeholder="Buscar por cliente, empreiteira, obra ou descrição..."
+                    type="text"
+                  />
+                </div>
+                <!-- Filtros rápidos -->
+                <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-xl">
+                  <span
+                    class="px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg cursor-pointer"
+                    >Todas</span
+                  >
+                  <span
+                    class="px-3 py-1.5 text-gray-600 text-xs font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                    >Taxas</span
+                  >
+                  <span
+                    class="px-3 py-1.5 text-gray-600 text-xs font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                    >Assinaturas</span
+                  >
+                  <span
+                    class="px-3 py-1.5 text-gray-600 text-xs font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                    >Outros</span
+                  >
+                </div>
+              </div>
+              <!-- Status dropdown -->
+              <div class="relative">
+                <select class="appearance-none bg-gray-100 border-none rounded-xl pl-4 pr-10 py-2 text-xs font-medium text-gray-700 focus:ring-2 focus:ring-primary/20 cursor-pointer">
+                  <option>Status: Todas</option>
+                  <option>Recebido</option>
+                  <option>Pendente</option>
+                  <option>Em processamento</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-[16px] pointer-events-none">expand_more</span>
+              </div>
+            </div>
+            <!-- Tabela -->
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead>
+                  <tr class="border-b border-gray-100 bg-gray-50/50">
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Data/Hora
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Descrição
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Cliente/Empreiteira
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Tipo de receita
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Origem
+                    </th>
+                    <th
+                      class="text-right py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Valor
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">26/06/2024 · 14:30</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Taxa de plataforma – Medição #12 – Obra Residencial Campinas
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Incorporadora Sunrise</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info"
+                        >Taxa sobre medição</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Cliente</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 12.500</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Recebido</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">25/06/2024 · 16:45</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Assinatura Plano Pro – Junho/2024
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Construtora Horizonte</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Assinatura</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Cliente</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 4.800</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Recebido</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">25/06/2024 · 09:20</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Taxa de plataforma – Medição #8 – Ed. Comercial Alpha
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Andrade Construções</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info"
+                        >Taxa sobre medição</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Empreiteira</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 8.200</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Recebido</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">24/06/2024 · 14:00</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Consultoria técnica – Laudo estrutural Obra #OBR-0051
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Carlos Santos</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-warning/10 text-warning"
+                        >Outros serviços</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Cliente</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 3.500</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-warning/10 text-warning"
+                        >Pendente</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 5 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">24/06/2024 · 10:30</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Taxa de plataforma – Medição #7 – Galpão Industrial
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Costa & Oliveira</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info"
+                        >Taxa sobre medição</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Empreiteira</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 6.800</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Recebido</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 6 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">23/06/2024 · 15:10</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Assinatura Plano Enterprise – Junho/2024
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Engenharia Delta</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Assinatura</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Cliente</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 9.600</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info"
+                        >Em processamento</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 7 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">23/06/2024 · 08:45</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Taxa de plataforma – Medição #5 – Residencial Vista Mar
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">Ponto Alto Engenharia</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-info/10 text-info"
+                        >Taxa sobre medição</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Empreiteira</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 5.400</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-warning/10 text-warning"
+                        >Pendente</span
+                      >
+                    </td>
+                  </tr>
+                  <!-- Row 8 -->
+                  <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">22/06/2024 · 11:00</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">
+                        Treinamento plataforma – Equipe técnica
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm text-gray-700">João Mendes</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-warning/10 text-warning"
+                        >Outros serviços</span
+                      >
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600"
+                        >Cliente</span
+                      >
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <p class="text-sm font-bold text-success">R$ 2.200</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                        >Recebido</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Paginação -->
+            <div class="px-6 py-4 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-sm text-gray-500">Exibindo <span class="font-bold text-gray-700">1–20</span> de <span class="font-bold text-gray-700">312</span> lançamentos</span>
+              <div class="flex items-center gap-1">
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 cursor-not-allowed">
+                  <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                </span>
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white text-xs font-bold cursor-pointer">1</span>
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-100 cursor-pointer">2</span>
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-100 cursor-pointer">3</span>
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg text-xs font-medium text-gray-500">...</span>
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-100 cursor-pointer">16</span>
+                <span class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 cursor-pointer">
+                  <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO 5: Top Clientes + Top Empreiteiras -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- 5.1 Top clientes por receita -->
+            <div class="bg-white rounded-xl border border-border-light card-shadow overflow-hidden">
+              <div class="px-6 py-5 border-b border-gray-100">
+                <h3 class="text-base font-bold text-gray-900">Top clientes por receita</h3>
+                <p class="text-xs text-gray-500 mt-0.5">Clientes com maior volume de entradas no período</p>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-gray-100 bg-gray-50/50">
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Cliente</th>
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Nº de obras</th>
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Total de entradas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Incorporadora Sunrise</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">12</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 85.000</td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Engenharia Delta</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">8</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 72.000</td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Construtora Horizonte</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">7</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 62.000</td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">João Mendes</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">2</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 58.000</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Carlos Santos</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">3</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 48.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 5.2 Top empreiteiras por receita -->
+            <div class="bg-white rounded-xl border border-border-light card-shadow overflow-hidden">
+              <div class="px-6 py-5 border-b border-gray-100">
+                <h3 class="text-base font-bold text-gray-900">Top empreiteiras por receita</h3>
+                <p class="text-xs text-gray-500 mt-0.5">Empreiteiras com maior volume de taxas geradas no período</p>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-gray-100 bg-gray-50/50">
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Empreiteira</th>
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Nº de obras</th>
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Vol. contratos</th>
+                      <th class="text-left py-3 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Total de taxas</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">MRV Serviços</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">12</td>
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">R$ 8.750.000</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 42.000</td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Andrade Construções</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">8</td>
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">R$ 4.200.000</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 35.000</td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Costa & Oliveira</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">5</td>
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">R$ 2.300.000</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 28.000</td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Ponto Alto Engenharia</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">3</td>
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">R$ 1.850.000</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 18.500</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">Nova Estrutura Eng.</td>
+                      <td class="py-3 px-6 text-sm text-gray-700">1</td>
+                      <td class="py-3 px-6 text-sm font-bold text-gray-900">R$ 980.000</td>
+                      <td class="py-3 px-6 text-sm text-success font-semibold">R$ 9.800</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO 6: Resumo por tipo de receita -->
+          <div class="bg-white rounded-xl border border-border-light card-shadow overflow-hidden">
+            <div class="px-6 py-5 border-b border-gray-100 flex justify-between items-center">
+              <div>
+                <h3 class="text-base font-bold text-gray-900">Resumo por tipo de receita</h3>
+                <p class="text-xs text-gray-500 mt-0.5">Composição das entradas no período selecionado</p>
+              </div>
+              <span class="material-symbols-outlined text-[20px] text-gray-400">receipt_long</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead>
+                  <tr class="border-b border-gray-100 bg-gray-50/50">
+                    <th class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Tipo de receita</th>
+                    <th class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">Valor total</th>
+                    <th class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider">% das entradas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Sobre medições -->
+                  <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="p-2 bg-info/10 text-info rounded-lg">
+                          <span class="material-symbols-outlined text-[18px]">assessment</span>
+                        </div>
+                        <span class="text-sm font-bold text-gray-900">Sobre medições</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-sm font-bold text-gray-900">R$ 245.000</td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-2">
+                        <div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div class="h-full bg-info rounded-full" style="width:75.4%"></div>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-700">75,4%</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Assinatura -->
+                  <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="p-2 bg-success/10 text-success rounded-lg">
+                          <span class="material-symbols-outlined text-[18px]">card_membership</span>
+                        </div>
+                        <span class="text-sm font-bold text-gray-900">Assinatura</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-sm font-bold text-gray-900">R$ 58.000</td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-2">
+                        <div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div class="h-full bg-success rounded-full" style="width:17.8%"></div>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-700">17,8%</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Outros serviços -->
+                  <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-3">
+                        <div class="p-2 bg-warning/10 text-warning rounded-lg">
+                          <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                        </div>
+                        <span class="text-sm font-bold text-gray-900">Outros serviços</span>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6 text-sm font-bold text-gray-900">R$ 22.000</td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center gap-2">
+                        <div class="w-24 h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div class="h-full bg-warning rounded-full" style="width:6.8%"></div>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-700">6,8%</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Total footer -->
+            <div class="px-6 py-5 bg-gray-50/80 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-sm font-bold text-gray-700">Total de entradas no período</span>
+              <span class="text-2xl font-extrabold text-gray-900">R$ 325.000</span>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

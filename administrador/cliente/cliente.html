@@ -1,0 +1,811 @@
+<!doctype html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clientes - Administrador XCon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      /* Scrollbar invisivel - aparece no hover */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      /* Firefox */
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img
+              src="../../logo/logo-xconstrucao-horizontal.png"
+              alt="XCon"
+              class="h-12"
+            />
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >dashboard</span
+              >
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">person</span>
+              <span class="text-sm font-semibold">Cliente</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >engineering</span
+              >
+              <span class="text-sm font-medium">Empreiteira</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >payments</span
+              >
+              <span class="text-sm font-medium">Financeiro</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >account_balance_wallet</span
+              >
+              <span class="text-sm font-medium">Caixa</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >trending_up</span
+              >
+              <span class="text-sm font-medium">Entradas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >trending_down</span
+              >
+              <span class="text-sm font-medium">Saídas</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">campaign</span>
+              <span class="text-sm font-medium">Anúncios</span>
+            </a>
+          </nav>
+        </div>
+        <div class="px-6 flex flex-col gap-1">
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">help</span>
+            <span class="text-sm font-medium whitespace-nowrap"
+              >Perguntas Frequentes</span
+            >
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">settings</span>
+            <span class="text-sm font-medium">Configurações</span>
+          </a>
+          <a
+            class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[20px]">logout</span>
+            <span class="text-sm font-medium">Sair</span>
+          </a>
+        </div>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                placeholder="Buscar clientes, empreiteiras ou lançamentos..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >notifications</span
+              >
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Rafael Santos
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">
+                  Administrador
+                </p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do administrador"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-8">
+          <!-- Page Header -->
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-end gap-4"
+          >
+            <div>
+              <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">
+                Clientes
+              </h1>
+              <p class="text-gray-500 mt-1">
+                Visão geral de todos os contratantes ativos na plataforma
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-sm text-gray-500 font-medium">
+                <span class="font-bold text-gray-900">32</span> clientes
+              </span>
+              <button
+                class="flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-gray-800 transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >person_add</span
+                >
+                Cadastrar novo cliente
+              </button>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="relative flex-1 max-w-md">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                >search</span
+              >
+              <input
+                class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2.5 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400"
+                placeholder="Buscar por nome, e-mail ou CNPJ..."
+                type="text"
+              />
+            </div>
+            <select
+              class="bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 pr-10 py-2.5 text-sm text-gray-700 focus:ring-2 focus:ring-primary/20 min-w-[180px]"
+            >
+              <option value="">Todos os status</option>
+              <option value="ativo">Ativos</option>
+              <option value="inativo">Inativos</option>
+              <option value="aprovacao">Em aprovação</option>
+            </select>
+          </div>
+
+          <!-- Clients Table -->
+          <div
+            class="bg-white rounded-xl border border-border-light card-shadow overflow-hidden"
+          >
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead>
+                  <tr class="border-b border-gray-100 bg-gray-50/50">
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Cliente
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Contato
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Obras
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Volume financeiro
+                    </th>
+                    <th
+                      class="text-left py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="text-right py-4 px-6 text-xs font-bold uppercase text-gray-500 tracking-wider"
+                    >
+                      Ações
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm font-bold text-gray-900">
+                          Construtora Horizonte
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          Pessoa Jurídica
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm text-gray-700">horizonte@email.com</p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          (11) 99999-1111
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-semibold text-gray-900">
+                        3 <span class="text-gray-400 font-normal">/ 7</span>
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">
+                        R$ 4.200.000
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                      >
+                        Ativo
+                      </span>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center justify-end gap-1">
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver detalhes"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >open_in_new</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver obras"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >construction</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Mais opções"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >more_horiz</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm font-bold text-gray-900">
+                          João Mendes
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          Pessoa Física
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          joao.mendes@email.com
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          (21) 98888-2222
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-semibold text-gray-900">
+                        1 <span class="text-gray-400 font-normal">/ 2</span>
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">R$ 350.000</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                      >
+                        Ativo
+                      </span>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center justify-end gap-1">
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver detalhes"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >open_in_new</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver obras"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >construction</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Mais opções"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >more_horiz</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm font-bold text-gray-900">
+                          Incorporadora Sunrise
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          Pessoa Jurídica
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          contato@sunrise.com.br
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          (11) 97777-3333
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-semibold text-gray-900">
+                        5 <span class="text-gray-400 font-normal">/ 12</span>
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">
+                        R$ 8.500.000
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                      >
+                        Ativo
+                      </span>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center justify-end gap-1">
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver detalhes"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >open_in_new</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver obras"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >construction</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Mais opções"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >more_horiz</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm font-bold text-gray-900">
+                          Maria Oliveira
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          Pessoa Física
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          maria.oliveira@email.com
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          (31) 96666-4444
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-semibold text-gray-900">
+                        0 <span class="text-gray-400 font-normal">/ 1</span>
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">R$ 180.000</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-600"
+                      >
+                        Em aprovação
+                      </span>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center justify-end gap-1">
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver detalhes"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >open_in_new</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver obras"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >construction</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Mais opções"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >more_horiz</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 5 -->
+                  <tr
+                    class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                  >
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm font-bold text-gray-900">
+                          Engenharia Delta
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          Pessoa Jurídica
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          delta@engenharia.com
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          (41) 95555-5555
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-semibold text-gray-900">
+                        2 <span class="text-gray-400 font-normal">/ 8</span>
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">
+                        R$ 2.100.000
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-500"
+                      >
+                        Inativo
+                      </span>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center justify-end gap-1">
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver detalhes"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >open_in_new</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver obras"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >construction</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Mais opções"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >more_horiz</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 6 -->
+                  <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm font-bold text-gray-900">
+                          Carlos Santos
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          Pessoa Física
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div>
+                        <p class="text-sm text-gray-700">
+                          carlos.santos@email.com
+                        </p>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                          (51) 94444-6666
+                        </p>
+                      </div>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-semibold text-gray-900">
+                        1 <span class="text-gray-400 font-normal">/ 3</span>
+                      </p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <p class="text-sm font-bold text-gray-900">R$ 520.000</p>
+                    </td>
+                    <td class="py-4 px-6">
+                      <span
+                        class="inline-flex px-3 py-1 rounded-full text-xs font-bold bg-success/10 text-success"
+                      >
+                        Ativo
+                      </span>
+                    </td>
+                    <td class="py-4 px-6">
+                      <div class="flex items-center justify-end gap-1">
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver detalhes"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >open_in_new</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Ver obras"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >construction</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors"
+                          title="Mais opções"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >more_horiz</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pagination -->
+            <div
+              class="flex justify-center items-center gap-2 py-6 border-t border-gray-100"
+            >
+              <button
+                class="p-2 rounded-lg hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors"
+                disabled
+              >
+                <span class="material-symbols-outlined text-[20px]"
+                  >chevron_left</span
+                >
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-lg bg-primary text-white text-sm font-bold"
+              >
+                1
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors"
+              >
+                2
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors"
+              >
+                3
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors"
+              >
+                4
+              </button>
+              <button
+                class="p-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-gray-800 transition-colors"
+              >
+                <span class="material-symbols-outlined text-[20px]"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

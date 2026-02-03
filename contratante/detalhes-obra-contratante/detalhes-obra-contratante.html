@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>XCon - Detalhes da Obra</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-light": "#f9fbfb",
+              "surface-dark": "#2A2D30",
+              "border-light": "#e9f0f1",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sidebar-item-active {
+        background-color: #f3f7f8;
+        border-right: 3px solid #333333;
+      }
+      .card-shadow {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+      }
+      .status-tag {
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .grayscale-img {
+        filter: grayscale(100%) contrast(1.1);
+        transition: filter 0.3s ease;
+      }
+      .card-hover:hover .grayscale-img {
+        filter: grayscale(0%) contrast(1);
+      }
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      /* Scrollbar invisível - aparece no hover */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+      aside::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 3px;
+      }
+      aside:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      /* Firefox */
+      aside {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      aside:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+    </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-border-light dark:border-neutral-800 bg-[#FAFAFA] dark:bg-background-dark flex flex-col justify-between py-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-8">
+          <div class="px-6">
+            <img src="../../logo/logo-xconstrucao-horizontal.png" alt="XCon" class="h-12">
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="dashboard-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >dashboard</span
+              >
+              <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="minhas-obras-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >construction</span
+              >
+              <span class="text-sm font-semibold">Minhas Obras</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >new_releases</span
+              >
+              <span class="text-sm font-medium">Nova Obra</span>
+            </a>
+          </nav>
+          <!-- Banner Monetização Superior -->
+          <div class="px-6 mt-4 mb-4">
+            <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-sm border border-border-light hover:shadow-md transition-shadow">
+              <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300')"></div>
+              <div class="p-3">
+                <span class="bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Anúncio</span>
+                <p class="text-[10px] text-gray-400 mt-2">Por <span class="font-medium text-gray-500">Parceiro</span></p>
+                <p class="text-xs font-semibold text-gray-700 mt-1 line-clamp-2">Materiais de construção com até 30% de desconto</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="px-6 flex flex-col gap-4">
+          <div class="bg-primary/5 rounded-xl p-4">
+            <p class="text-xs font-bold text-primary mb-1">Upgrade de Plano</p>
+            <p class="text-[10px] text-gray-500 mb-3">
+              Obtenha acesso a relatórios avançados de IA.
+            </p>
+            <button
+              class="w-full py-2 bg-primary text-white text-[11px] font-bold rounded-lg uppercase tracking-wider"
+            >
+              Ver Planos
+            </button>
+          </div>
+          <div class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary transition-colors"
+              href="../q&a-contratante/q&a-contratante.html"
+            >
+              <span class="material-symbols-outlined text-[20px]">help</span>
+              <span class="text-sm font-medium whitespace-nowrap">Perguntas Frequentes</span>
+            </a>
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-primary"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >settings</span
+              >
+              <span class="text-sm font-medium">Configurações</span>
+            </a>
+            <a
+              class="flex items-center gap-3 py-2 text-gray-500 hover:text-red-600"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">logout</span>
+              <span class="text-sm font-medium">Sair</span>
+            </a>
+            <!-- Banner Monetização Inferior -->
+            <div class="mt-4">
+              <a href="#" class="block bg-white rounded-xl overflow-hidden shadow-sm border border-border-light hover:shadow-md transition-shadow">
+                <div class="aspect-[4/3] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300')"></div>
+                <div class="p-3">
+                  <span class="bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Anúncio</span>
+                  <p class="text-[10px] text-gray-400 mt-2">Por <span class="font-medium text-gray-500">Loja Local</span></p>
+                  <p class="text-xs font-semibold text-gray-700 mt-1 line-clamp-2">Ferramentas profissionais na sua região</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Header -->
+        <header
+          class="h-20 flex items-center justify-between px-12 py-2 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10"
+        >
+          <div class="flex items-center gap-4 w-1/3">
+            <div class="relative w-full max-w-sm">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+              <input class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl pl-10 py-2 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400" placeholder="Buscar obras, documentos ou propostas..." type="text" />
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >notifications</span
+              >
+            </button>
+            <button
+              class="size-10 flex items-center justify-center rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">settings</span>
+            </button>
+            <div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+            <div class="flex items-center gap-3">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-gray-900 leading-none">
+                  Roberto Gomes
+                </p>
+                <p class="text-[11px] text-gray-500 font-medium">Contratante</p>
+              </div>
+              <div
+                class="w-10 h-10 rounded-full bg-cover bg-center border border-border-light"
+                data-alt="Foto de perfil do contratante"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="p-10 flex flex-col gap-8">
+
+          <!-- Navegação -->
+          <div class="flex flex-col gap-2">
+            <a href="../minhas-obras-contratante/minhas-obras-contratante.html" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors">
+              <span class="material-symbols-outlined text-lg">arrow_back</span>
+              Voltar
+            </a>
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-2 text-sm">
+              <a href="../minhas-obras-contratante/minhas-obras-contratante.html" class="text-gray-400 hover:text-primary transition-colors">Minhas Obras</a>
+              <span class="material-symbols-outlined text-gray-300 text-base">chevron_right</span>
+              <span class="text-primary font-semibold">Residência Aurora</span>
+            </nav>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 1: Hero da Obra -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white rounded-3xl overflow-hidden border border-border-light card-shadow">
+            <!-- Foto Hero 16:9 -->
+            <div class="aspect-[16/7] relative overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8DmbXHWnFRx9HxLakzPyNurJA72UzcVOvQQEBJqvLxnyCcZeKjX1aXtrBDlXVEaKi49al2DZGMd2ur1D_-Jzoszo_rG7WhvAcJU1jZHR1fY0XtuYvxQE6etY5f1_4bQ_nszNI7JNfvPJ-mPrD900yFW47Iwnr22abQx1dR3PCkmaldJj9XTbNZuL0gppYAHJwDGJ4O3-8TLdIXjtEKGTSIbUrlsrFYM-P0kjU2emLbko53Z4_5_fCNiUVrl2ShrZGxRJZBRMwDrL8"
+                alt="Foto principal da obra Residência Aurora"
+              />
+              <!-- Overlay gradiente -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+              <!-- Conteúdo sobre a imagem -->
+              <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                  <div>
+                    <!-- Status Badge -->
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-full text-[11px] font-bold uppercase tracking-wider mb-4">
+                      <span class="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+                      Em Execução
+                    </span>
+                    <!-- Nome da Obra -->
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3">Residência Aurora</h1>
+                    <!-- Localização -->
+                    <div class="flex items-center gap-2 text-white/90 text-sm">
+                      <span class="material-symbols-outlined text-lg">location_on</span>
+                      <span>Alphaville, Santana de Parnaíba - SP</span>
+                    </div>
+                  </div>
+
+                  <!-- Meta informações -->
+                  <div class="flex flex-wrap gap-6 text-sm">
+                    <div class="flex items-center gap-2 text-white/90">
+                      <span class="material-symbols-outlined text-lg">event</span>
+                      <div>
+                        <p class="text-white/60 text-xs">Entrega estimada</p>
+                        <p class="font-bold">Março 2026</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/90">
+                      <span class="material-symbols-outlined text-lg">update</span>
+                      <div>
+                        <p class="text-white/60 text-xs">Última atualização</p>
+                        <p class="font-bold">Há 2 dias</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barra de Progresso Grande -->
+            <div class="p-8 bg-surface-light">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm font-bold text-gray-500 uppercase tracking-wider">Progresso Geral</span>
+                <span class="text-3xl font-extrabold text-primary">65%</span>
+              </div>
+              <div class="h-4 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 2: KPIs -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- KPI 1: Progresso Planejado -->
+            <div class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-blue-300 transition-all">
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-blue-50 text-blue-600 rounded-lg">
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <span class="text-blue-600 text-xs font-bold bg-blue-50 px-2 py-1 rounded-full">Meta</span>
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Progresso Planejado</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">72%</p>
+              </div>
+              <div class="h-1.5 w-full bg-blue-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 w-[72%] rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- KPI 2: Progresso Realizado -->
+            <div class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-success/40 transition-all">
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-success/10 text-success rounded-lg">
+                  <span class="material-symbols-outlined">check_circle</span>
+                </div>
+                <span class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full">Real</span>
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Progresso Realizado</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1">65%</p>
+              </div>
+              <div class="h-1.5 w-full bg-success/20 rounded-full overflow-hidden">
+                <div class="h-full bg-success/100 w-[65%] rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- KPI 3: Desvio (Atrasado) -->
+            <div class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-amber-300 transition-all border-l-4 border-l-amber-500">
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-amber-50 text-amber-600 rounded-lg">
+                  <span class="material-symbols-outlined">trending_down</span>
+                </div>
+                <span class="text-amber-600 text-xs font-bold bg-amber-50 px-2 py-1 rounded-full">Atrasado</span>
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Desvio</p>
+                <p class="text-4xl font-extrabold text-amber-600 mt-1">-7%</p>
+              </div>
+              <p class="text-xs text-gray-500">Equivalente a ~15 dias de atraso</p>
+            </div>
+
+            <!-- KPI 4: Fase Atual -->
+            <div class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-purple-300 transition-all">
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-purple-50 text-purple-600 rounded-lg">
+                  <span class="material-symbols-outlined">layers</span>
+                </div>
+                <span class="text-purple-600 text-xs font-bold bg-purple-50 px-2 py-1 rounded-full">Fase 3/5</span>
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Fase Atual</p>
+                <p class="text-2xl font-extrabold text-gray-900 mt-1">Estrutura</p>
+              </div>
+              <p class="text-xs text-gray-500">Próxima: Alvenaria e Cobertura</p>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 3: Timeline -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="flex justify-between items-center mb-8">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Linha do Tempo</h3>
+                <p class="text-sm text-gray-500">Marcos e entregas do projeto</p>
+              </div>
+              <button class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                Ver cronograma completo
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Timeline Vertical -->
+            <div class="relative">
+              <!-- Linha vertical -->
+              <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+
+              <!-- Item 1: Início - Concluído -->
+              <div class="relative flex gap-6 pb-8">
+                <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-success/100 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-sm">check</span>
+                </div>
+                <div class="flex-1 pt-1">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h4 class="font-bold text-gray-900">Início da Obra</h4>
+                    <span class="text-[10px] font-bold text-success bg-success/10 px-2 py-0.5 rounded uppercase">Concluído</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mb-1">Mobilização do canteiro e terraplanagem inicial</p>
+                  <p class="text-xs text-gray-400">15 Jan 2025</p>
+                </div>
+              </div>
+
+              <!-- Item 2: Marco atingido - Concluído -->
+              <div class="relative flex gap-6 pb-8">
+                <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-success/100 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-sm">check</span>
+                </div>
+                <div class="flex-1 pt-1">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h4 class="font-bold text-gray-900">Fundação Concluída</h4>
+                    <span class="text-[10px] font-bold text-success bg-success/10 px-2 py-0.5 rounded uppercase">Concluído</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mb-1">Sapatas, vigas baldrame e impermeabilização</p>
+                  <p class="text-xs text-gray-400">28 Fev 2025</p>
+                </div>
+              </div>
+
+              <!-- Item 3: Em andamento -->
+              <div class="relative flex gap-6 pb-8">
+                <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center ring-4 ring-primary/20">
+                  <span class="material-symbols-outlined text-white text-sm">construction</span>
+                </div>
+                <div class="flex-1 pt-1 bg-primary/5 -ml-3 pl-6 pr-4 py-3 rounded-lg">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h4 class="font-bold text-gray-900">Estrutura de Concreto</h4>
+                    <span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded uppercase">Em Andamento</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mb-1">Pilares, vigas e lajes - Pavimento 2 de 3</p>
+                  <p class="text-xs text-gray-400">Previsão: 20 Mai 2025</p>
+                  <div class="mt-3 h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-primary w-[60%] rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: Próximo -->
+              <div class="relative flex gap-6 pb-8">
+                <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-gray-400 text-sm">schedule</span>
+                </div>
+                <div class="flex-1 pt-1">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h4 class="font-bold text-gray-400">Alvenaria e Cobertura</h4>
+                    <span class="text-[10px] font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded uppercase">Pendente</span>
+                  </div>
+                  <p class="text-sm text-gray-400 mb-1">Paredes, telhado e instalações</p>
+                  <p class="text-xs text-gray-400">Previsão: Jul 2025</p>
+                </div>
+              </div>
+
+              <!-- Item 5: Com alerta de atraso -->
+              <div class="relative flex gap-6 pb-8">
+                <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-sm">warning</span>
+                </div>
+                <div class="flex-1 pt-1 bg-amber-50 -ml-3 pl-6 pr-4 py-3 rounded-lg border-l-4 border-amber-500">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h4 class="font-bold text-gray-900">Acabamentos</h4>
+                    <span class="text-[10px] font-bold text-amber-600 bg-amber-100 px-2 py-0.5 rounded uppercase">Risco de Atraso</span>
+                  </div>
+                  <p class="text-sm text-gray-500 mb-1">Dependente da conclusão da estrutura</p>
+                  <p class="text-xs text-amber-600">Previsão original: Set 2025 | Nova previsão: Out 2025</p>
+                </div>
+              </div>
+
+              <!-- Item 6: Entrega Final -->
+              <div class="relative flex gap-6">
+                <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-gray-400 text-sm">flag</span>
+                </div>
+                <div class="flex-1 pt-1">
+                  <div class="flex items-center gap-3 mb-1">
+                    <h4 class="font-bold text-gray-400">Entrega Final</h4>
+                    <span class="text-[10px] font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded uppercase">Marco Final</span>
+                  </div>
+                  <p class="text-sm text-gray-400 mb-1">Vistoria final e entrega das chaves</p>
+                  <p class="text-xs text-gray-400">Previsão: Mar 2026</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 4: Gráfico Evolução -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white px-8 pt-8 pb-6 rounded-xl border border-border-light card-shadow">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Evolução: Planejado x Realizado</h3>
+                <p class="text-sm text-gray-500">Acompanhamento mensal do progresso</p>
+              </div>
+              <div class="flex gap-2">
+                <button class="px-3 py-1.5 text-xs font-bold text-primary bg-primary/10 rounded-lg">6 meses</button>
+                <button class="px-3 py-1.5 text-xs font-medium text-gray-500 hover:bg-gray-100 rounded-lg">12 meses</button>
+                <button class="px-3 py-1.5 text-xs font-medium text-gray-500 hover:bg-gray-100 rounded-lg">Tudo</button>
+              </div>
+            </div>
+
+            <!-- Legenda -->
+            <div class="flex items-center gap-6 mb-6">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-success/100 rounded-full"></div>
+                <span class="text-xs font-medium text-gray-600">Planejado</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-primary rounded-full"></div>
+                <span class="text-xs font-medium text-gray-600">Realizado</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-3 bg-gradient-to-r from-amber-200 to-transparent rounded"></div>
+                <span class="text-xs font-medium text-gray-600">Área de desvio</span>
+              </div>
+            </div>
+
+            <!-- Gráfico SVG -->
+            <div class="relative h-[280px] w-full">
+              <!-- Labels Y-axis -->
+              <div class="absolute -left-1 inset-y-0 flex flex-col justify-between text-[10px] font-bold text-gray-400 py-2">
+                <span>100%</span>
+                <span>75%</span>
+                <span>50%</span>
+                <span>25%</span>
+                <span>0%</span>
+              </div>
+
+              <!-- SVG Chart -->
+              <svg class="w-full h-full pl-8" viewBox="0 0 1000 280" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="deviationGradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2"/>
+                    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- Grid lines -->
+                <line x1="0" y1="70" x2="1000" y2="70" stroke="#f3f4f6" stroke-width="1"/>
+                <line x1="0" y1="140" x2="1000" y2="140" stroke="#f3f4f6" stroke-width="1"/>
+                <line x1="0" y1="210" x2="1000" y2="210" stroke="#f3f4f6" stroke-width="1"/>
+
+                <!-- Área entre as linhas (desvio) -->
+                <path
+                  d="M0,266 L166,238 L333,210 L500,168 L666,126 L833,98 L1000,78
+                     L1000,98 L833,112 L666,140 L500,182 L333,224 L166,252 L0,280 Z"
+                  fill="url(#deviationGradient)"
+                />
+
+                <!-- Linha Planejado (verde) -->
+                <path
+                  d="M0,266 L166,238 L333,210 L500,168 L666,126 L833,98 L1000,78"
+                  fill="none"
+                  stroke="#22846D"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+
+                <!-- Linha Realizado (primary) -->
+                <path
+                  d="M0,280 L166,252 L333,224 L500,182 L666,140 L833,112 L1000,98"
+                  fill="none"
+                  stroke="#333333"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+
+                <!-- Pontos de destaque -->
+                <circle cx="1000" cy="78" r="6" fill="#fff" stroke="#22846D" stroke-width="3"/>
+                <circle cx="1000" cy="98" r="6" fill="#fff" stroke="#333333" stroke-width="3"/>
+              </svg>
+
+              <!-- Labels finais -->
+              <div class="absolute right-0 top-[60px] text-right">
+                <span class="text-sm font-extrabold text-success">72%</span>
+              </div>
+              <div class="absolute right-0 top-[85px] text-right">
+                <span class="text-sm font-extrabold text-primary">65%</span>
+              </div>
+            </div>
+
+            <!-- Labels do eixo X -->
+            <div class="flex justify-between mt-2 pl-8">
+              <span class="text-[11px] font-bold text-gray-400">JAN</span>
+              <span class="text-[11px] font-bold text-gray-400">FEV</span>
+              <span class="text-[11px] font-bold text-gray-400">MAR</span>
+              <span class="text-[11px] font-bold text-gray-400">ABR</span>
+              <span class="text-[11px] font-bold text-gray-400">MAI</span>
+              <span class="text-[11px] font-bold text-primary uppercase">JUN</span>
+            </div>
+
+            <!-- Resumo abaixo do gráfico -->
+            <div class="flex items-center justify-center gap-8 mt-6 pt-6 border-t border-gray-100">
+              <div class="text-center">
+                <p class="text-xs text-gray-500 font-medium">Desvio Atual</p>
+                <p class="text-lg font-extrabold text-amber-600">-7%</p>
+              </div>
+              <div class="w-px h-10 bg-gray-200"></div>
+              <div class="text-center">
+                <p class="text-xs text-gray-500 font-medium">Tendência</p>
+                <p class="text-lg font-extrabold text-gray-900 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-amber-500 text-base">trending_down</span>
+                  Recuperando
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 5: Feed de Atualizações -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="flex justify-between items-center mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Atualizações Recentes</h3>
+                <p class="text-sm text-gray-500">Histórico de atividades da obra</p>
+              </div>
+              <button class="text-xs font-bold text-primary hover:underline">Ver todas</button>
+            </div>
+
+            <div class="flex flex-col gap-6">
+
+              <!-- Atualização 1: Com fotos -->
+              <div class="flex gap-4 pb-6 border-b border-gray-100">
+                <div class="flex-shrink-0 w-10 h-10 bg-success/10 text-success rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Concretagem da laje do 2º pavimento finalizada</p>
+                      <p class="text-xs text-gray-500 mt-1">Execução conforme projeto estrutural. Tempo de cura: 28 dias.</p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium whitespace-nowrap ml-4">Há 2 dias</span>
+                  </div>
+                  <!-- Fotos miniaturas -->
+                  <div class="flex gap-2 mt-3">
+                    <div class="w-20 h-20 rounded-lg bg-cover bg-center border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8DmbXHWnFRx9HxLakzPyNurJA72UzcVOvQQEBJqvLxnyCcZeKjX1aXtrBDlXVEaKi49al2DZGMd2ur1D_-Jzoszo_rG7WhvAcJU1jZHR1fY0XtuYvxQE6etY5f1_4bQ_nszNI7JNfvPJ-mPrD900yFW47Iwnr22abQx1dR3PCkmaldJj9XTbNZuL0gppYAHJwDGJ4O3-8TLdIXjtEKGTSIbUrlsrFYM-P0kjU2emLbko53Z4_5_fCNiUVrl2ShrZGxRJZBRMwDrL8')"></div>
+                    <div class="w-20 h-20 rounded-lg bg-cover bg-center border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1BBXAC9cxWtr_xxq6GMheh1UPMH7QOxjVXSxQMxBDlikGJlY7tcI8lLgR1phw-5h0LupLOK0buFsedKQd_HhLx_ot54xJ74x-QU43v_Vv_PGsGWt3AjxViGN79yfdq8UcyPOgE51HrOIMiE0hca5CUMZVPgdT4rbFNrg2aNk3hgNC7EHMhLfE7v1VHieW_Jm5GbXhcbToyZnqG_Ywfot5vZzy0oD7UAfDmKZ3WPAb6EiDMEUdVQqtNHN8ChonOHFid74Qa5MZguOO')"></div>
+                    <div class="w-20 h-20 rounded-lg bg-cover bg-center border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity relative" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEFDr73BPGE09f2fzelh2zX730l7a3m3Qpst4iN6IVL0ZpJa0b3tZO6dF5GFwLDt7GC5EpG4D9mW3iL0Eb3Wo9mOIzpI5nNqIpHHDZU0M5M6AM6uk4zZeXIXVRUMSx-QPgfNoDIn9JX3pOd5lmdHtrTDNWyGdKWfa0_KRgDwFMAnPxgwg4l1YH55RALHwoMCnmhBJwnWaX6KRWnldYsBM4rQrLu0etItQtd7amvmvoxq83hLsupAAqxZuUe0SpI_J7z6TBSbqwM7wj')">
+                      <div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">+5</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Autor -->
+                  <div class="flex items-center gap-2 mt-3">
+                    <div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px] font-bold">CS</div>
+                    <span class="text-xs text-gray-500">Eng. Carlos Silva</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Atualização 2: Documento -->
+              <div class="flex gap-4 pb-6 border-b border-gray-100">
+                <div class="flex-shrink-0 w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">description</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Relatório semanal #24 disponível</p>
+                      <p class="text-xs text-gray-500 mt-1">Novo relatório de acompanhamento anexado ao projeto.</p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium whitespace-nowrap ml-4">Há 3 dias</span>
+                  </div>
+                  <!-- Arquivo anexo -->
+                  <div class="flex items-center gap-3 mt-3 p-3 bg-gray-50 rounded-lg">
+                    <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+                    <div class="flex-1">
+                      <p class="text-xs font-medium text-gray-700">Relatorio_Semanal_24.pdf</p>
+                      <p class="text-[10px] text-gray-400">2.4 MB</p>
+                    </div>
+                    <button class="text-primary hover:underline text-xs font-bold">Baixar</button>
+                  </div>
+                  <div class="flex items-center gap-2 mt-3">
+                    <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-[10px] font-bold">MS</div>
+                    <span class="text-xs text-gray-500">Eng. Maria Santos</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Atualização 3: Alerta -->
+              <div class="flex gap-4 pb-6 border-b border-gray-100">
+                <div class="flex-shrink-0 w-10 h-10 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">warning</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Atraso na entrega de materiais</p>
+                      <p class="text-xs text-gray-500 mt-1">Fornecedor informou atraso de 5 dias úteis na entrega de esquadrias.</p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium whitespace-nowrap ml-4">Há 5 dias</span>
+                  </div>
+                  <div class="flex items-center gap-2 mt-3">
+                    <div class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] font-bold">JP</div>
+                    <span class="text-xs text-gray-500">Mestre João Pedro</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Atualização 4: Pagamento -->
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">payments</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between mb-2">
+                    <div>
+                      <p class="text-sm font-bold text-gray-900">Medição #6 aprovada</p>
+                      <p class="text-xs text-gray-500 mt-1">Valor de R$ 85.000,00 liberado para pagamento.</p>
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-medium whitespace-nowrap ml-4">Há 1 semana</span>
+                  </div>
+                  <div class="flex items-center gap-2 mt-3">
+                    <div class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px] font-bold">XC</div>
+                    <span class="text-xs text-gray-500">Sistema XCon</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 6: Galeria de Fotos -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Galeria de Fotos</h3>
+                <p class="text-sm text-gray-500">Registro fotográfico da evolução</p>
+              </div>
+              <button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 w-fit">
+                <span class="material-symbols-outlined text-sm">add_photo_alternate</span>
+                Adicionar fotos
+              </button>
+            </div>
+
+            <!-- Tabs de categorias -->
+            <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+              <button class="px-4 py-2 rounded-full bg-primary text-white text-xs font-bold whitespace-nowrap">Todas (48)</button>
+              <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap">Antes (8)</button>
+              <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap">Durante (32)</button>
+              <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-xs font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap">Hoje (5)</button>
+              <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-400 text-xs font-semibold cursor-not-allowed whitespace-nowrap">Finalizado (0)</button>
+            </div>
+
+            <!-- Seção: Antes -->
+            <div class="mb-8">
+              <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                Antes da Obra
+              </h4>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                  <img class="grayscale-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7W6Fcgnikb0klIa7hkm6pX3Smh1pW5HvMMZuEC3afBide2rGgf_V5KctQ3iRkmExa5IRrDV73Mc5OU8BrD7ouTdaA1ykymRaMdUPrrwwQEfO7mXG6wSUw7Z5_NZQpNBOWM9I5Jnx4lIOwn9uwQLlLr1QLczqAiNlauoeGSBurCRSBIMgMoBjrzPBJenoJm9bDSatb-IYThoh_-bnIWP9bl1kZh1fTNpnlHh-RFYe6Qgdy9fbLkirj_gGJR_p_51bIDThwIMGKVdfu" alt="Terreno antes da obra"/>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">zoom_in</span>
+                  </div>
+                  <div class="absolute bottom-2 left-2 text-[10px] font-medium text-white bg-black/50 px-2 py-1 rounded">Jan 2025</div>
+                </div>
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                  <img class="grayscale-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBF1DUcymxXuRzytusLVESAxMX-yd73M2_J8Hu0VW-S-IlLbsbQeqROeEYbrm5W1ki8UvnKb3pNQOkmMSKS5VT3SzGHTBigkb7FM9RSNFxF1HjbkWWctx2uTNDWT5fiXjgyUFelu8rxmVATiTkQPH96CZFmcoM6fWbpDi4RJi-My8qbxjEe32WoZnmfPSKY91ZivFPFUJYusMOKLKorKYLgmnLibm7b6jhnR1UOzxPZ2akqanHf5ViMiDtfIBPJmFkV7bpP5vRmEdB" alt="Vista aérea do terreno"/>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">zoom_in</span>
+                  </div>
+                  <div class="absolute bottom-2 left-2 text-[10px] font-medium text-white bg-black/50 px-2 py-1 rounded">Jan 2025</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seção: Durante -->
+            <div class="mb-8">
+              <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                Durante a Execução
+              </h4>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8DmbXHWnFRx9HxLakzPyNurJA72UzcVOvQQEBJqvLxnyCcZeKjX1aXtrBDlXVEaKi49al2DZGMd2ur1D_-Jzoszo_rG7WhvAcJU1jZHR1fY0XtuYvxQE6etY5f1_4bQ_nszNI7JNfvPJ-mPrD900yFW47Iwnr22abQx1dR3PCkmaldJj9XTbNZuL0gppYAHJwDGJ4O3-8TLdIXjtEKGTSIbUrlsrFYM-P0kjU2emLbko53Z4_5_fCNiUVrl2ShrZGxRJZBRMwDrL8" alt="Fundação em execução"/>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">zoom_in</span>
+                  </div>
+                  <div class="absolute bottom-2 left-2 text-[10px] font-medium text-white bg-black/50 px-2 py-1 rounded">Fev 2025</div>
+                </div>
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1BBXAC9cxWtr_xxq6GMheh1UPMH7QOxjVXSxQMxBDlikGJlY7tcI8lLgR1phw-5h0LupLOK0buFsedKQd_HhLx_ot54xJ74x-QU43v_Vv_PGsGWt3AjxViGN79yfdq8UcyPOgE51HrOIMiE0hca5CUMZVPgdT4rbFNrg2aNk3hgNC7EHMhLfE7v1VHieW_Jm5GbXhcbToyZnqG_Ywfot5vZzy0oD7UAfDmKZ3WPAb6EiDMEUdVQqtNHN8ChonOHFid74Qa5MZguOO" alt="Estrutura em andamento"/>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">zoom_in</span>
+                  </div>
+                  <div class="absolute bottom-2 left-2 text-[10px] font-medium text-white bg-black/50 px-2 py-1 rounded">Mar 2025</div>
+                </div>
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEFDr73BPGE09f2fzelh2zX730l7a3m3Qpst4iN6IVL0ZpJa0b3tZO6dF5GFwLDt7GC5EpG4D9mW3iL0Eb3Wo9mOIzpI5nNqIpHHDZU0M5M6AM6uk4zZeXIXVRUMSx-QPgfNoDIn9JX3pOd5lmdHtrTDNWyGdKWfa0_KRgDwFMAnPxgwg4l1YH55RALHwoMCnmhBJwnWaX6KRWnldYsBM4rQrLu0etItQtd7amvmvoxq83hLsupAAqxZuUe0SpI_J7z6TBSbqwM7wj" alt="Pilares concretados"/>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">zoom_in</span>
+                  </div>
+                  <div class="absolute bottom-2 left-2 text-[10px] font-medium text-white bg-black/50 px-2 py-1 rounded">Abr 2025</div>
+                </div>
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
+                  <div class="text-center">
+                    <span class="material-symbols-outlined text-gray-400 text-3xl">add_photo_alternate</span>
+                    <p class="text-xs text-gray-500 mt-2 font-semibold">+29 fotos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seção: Hoje -->
+            <div>
+              <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 bg-success/100 rounded-full animate-pulse"></span>
+                Registro de Hoje
+              </h4>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer ring-2 ring-success">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8DmbXHWnFRx9HxLakzPyNurJA72UzcVOvQQEBJqvLxnyCcZeKjX1aXtrBDlXVEaKi49al2DZGMd2ur1D_-Jzoszo_rG7WhvAcJU1jZHR1fY0XtuYvxQE6etY5f1_4bQ_nszNI7JNfvPJ-mPrD900yFW47Iwnr22abQx1dR3PCkmaldJj9XTbNZuL0gppYAHJwDGJ4O3-8TLdIXjtEKGTSIbUrlsrFYM-P0kjU2emLbko53Z4_5_fCNiUVrl2ShrZGxRJZBRMwDrL8" alt="Progresso de hoje"/>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">zoom_in</span>
+                  </div>
+                  <div class="absolute top-2 right-2">
+                    <span class="text-[10px] font-bold text-white bg-success/100 px-2 py-1 rounded">Novo</span>
+                  </div>
+                  <div class="absolute bottom-2 left-2 text-[10px] font-medium text-white bg-black/50 px-2 py-1 rounded">Hoje, 14:32</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 7: Documentos -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Documentos</h3>
+                <p class="text-sm text-gray-500">Arquivos e documentação do projeto</p>
+              </div>
+              <button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 w-fit">
+                <span class="material-symbols-outlined text-sm">upload_file</span>
+                Upload
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              <!-- Seção: Proposta e Contrato -->
+              <div>
+                <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Proposta e Contrato</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-red-100 text-red-600 rounded-lg">
+                      <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Proposta_Comercial_v3.pdf</p>
+                      <p class="text-xs text-gray-500">1.2 MB - Enviado em 10 Jan 2025</p>
+                    </div>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-red-100 text-red-600 rounded-lg">
+                      <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Contrato_Assinado.pdf</p>
+                      <p class="text-xs text-gray-500">3.8 MB - Assinado em 15 Jan 2025</p>
+                    </div>
+                    <span class="text-[10px] font-bold text-success bg-success/10 px-2 py-1 rounded">Assinado</span>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Seção: Cronograma -->
+              <div>
+                <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Cronograma</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-success/20 text-success rounded-lg">
+                      <span class="material-symbols-outlined">table_chart</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Cronograma_Fisico_v5.xlsx</p>
+                      <p class="text-xs text-gray-500">856 KB - Atualizado em 05 Jun 2025</p>
+                    </div>
+                    <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Atual</span>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-red-100 text-red-600 rounded-lg">
+                      <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Cronograma_Fisico_Financeiro.pdf</p>
+                      <p class="text-xs text-gray-500">2.1 MB - Enviado em 20 Jan 2025</p>
+                    </div>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Seção: ART/RESP -->
+              <div>
+                <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">ART / Responsabilidade Técnica</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-red-100 text-red-600 rounded-lg">
+                      <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">ART_Execucao_Obra.pdf</p>
+                      <p class="text-xs text-gray-500">520 KB - CREA-SP 123456</p>
+                    </div>
+                    <span class="text-[10px] font-bold text-success bg-success/10 px-2 py-1 rounded">Válido</span>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-4 p-4 bg-amber-50 rounded-lg hover:bg-amber-100 transition-colors group border-l-4 border-amber-500">
+                    <div class="p-2 bg-amber-100 text-amber-600 rounded-lg">
+                      <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">RRT_Projeto_Arquitetonico.pdf</p>
+                      <p class="text-xs text-amber-600">Vence em 15 dias - CAU-SP 789012</p>
+                    </div>
+                    <span class="text-[10px] font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded">Renovar</span>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Seção: Plantas e Projetos -->
+              <div>
+                <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Plantas e Projetos Técnicos</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-blue-100 text-blue-600 rounded-lg">
+                      <span class="material-symbols-outlined">architecture</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Projeto_Arquitetonico_Completo.dwg</p>
+                      <p class="text-xs text-gray-500">45.2 MB - 32 pranchas</p>
+                    </div>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-purple-100 text-purple-600 rounded-lg">
+                      <span class="material-symbols-outlined">engineering</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Projeto_Estrutural.pdf</p>
+                      <p class="text-xs text-gray-500">28.5 MB - 18 pranchas</p>
+                    </div>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                  <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                    <div class="p-2 bg-cyan-100 text-cyan-600 rounded-lg">
+                      <span class="material-symbols-outlined">water_drop</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-bold text-gray-900 truncate">Projeto_Hidraulico.pdf</p>
+                      <p class="text-xs text-gray-500">12.3 MB - 8 pranchas</p>
+                    </div>
+                    <button class="p-2 text-gray-400 hover:text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span class="material-symbols-outlined">download</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Botão download all -->
+            <div class="mt-6 pt-6 border-t border-gray-100 flex justify-center">
+              <button class="px-6 py-3 bg-gray-100 text-gray-700 text-sm font-bold rounded-xl hover:bg-gray-200 transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">folder_zip</span>
+                Baixar todos os documentos (156 MB)
+              </button>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 8: Responsáveis -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="mb-6">
+              <h3 class="text-lg font-bold text-gray-900">Responsáveis</h3>
+              <p class="text-sm text-gray-500">Equipe envolvida no projeto</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              <!-- Empresa/Empreiteiro -->
+              <div class="p-6 bg-surface-light rounded-xl border border-border-light">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-2xl">business</span>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Empresa Executora</p>
+                    <p class="text-lg font-bold text-gray-900">Silva Construtora Ltda</p>
+                  </div>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">badge</span>
+                    <span>CNPJ: 12.345.678/0001-90</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">star</span>
+                    <span>4.8 (127 avaliações)</span>
+                  </div>
+                </div>
+                <button class="mt-4 w-full py-2 text-xs font-bold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">
+                  Ver perfil completo
+                </button>
+              </div>
+
+              <!-- Engenheiro Responsável -->
+              <div class="p-6 bg-surface-light rounded-xl border border-border-light">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-14 h-14 rounded-full bg-cover bg-center border-2 border-white shadow-md" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9imExqzr9GwnW9kqj9iIBXTLp2Q2dj19ral2soIH-rS_O0obmr-WyGo15ocXHvPjx5Wi3CGN7r_aOgyfSJ-OjRXuIcHBDIAX57m6pggN9JQE35OVTwFqo5XeyubMw1ls-dxpaK8XVB0PshDN-CREwS_bI_-pi3zW06JN2YPESlWhSRvI9Y7dosDTKJ_ypKNFvB7tTvKQQEj80TkcT3UJu07y3-2LmWofqHTVDu621sXgjSWhPtZmclmxD7RmNz5C6QEQVjPg4R9L8')"></div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Engenheiro Responsável</p>
+                    <p class="text-lg font-bold text-gray-900">Carlos A. Silva</p>
+                  </div>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">engineering</span>
+                    <span>CREA-SP 123456-D</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">school</span>
+                    <span>Eng. Civil - USP</span>
+                  </div>
+                </div>
+                <div class="mt-4 flex gap-2">
+                  <button class="flex-1 py-2 text-xs font-bold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">call</span>
+                    Ligar
+                  </button>
+                  <button class="flex-1 py-2 text-xs font-bold text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-sm">mail</span>
+                    Email
+                  </button>
+                </div>
+              </div>
+
+              <!-- Contato Principal -->
+              <div class="p-6 bg-surface-light rounded-xl border border-border-light">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-14 h-14 rounded-full bg-success/100 text-white flex items-center justify-center text-xl font-bold">MS</div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Contato Principal</p>
+                    <p class="text-lg font-bold text-gray-900">Maria Santos</p>
+                  </div>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">call</span>
+                    <span>(11) 98765-4321</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm text-gray-600">
+                    <span class="material-symbols-outlined text-gray-400 text-lg">mail</span>
+                    <span>maria@silvaconstrutora.com</span>
+                  </div>
+                </div>
+                <button class="mt-4 w-full py-2 text-xs font-bold text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <span class="material-symbols-outlined text-sm">chat</span>
+                  Iniciar conversa
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 9: Financeiro Gerencial -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="flex justify-between items-center mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Resumo Financeiro</h3>
+                <p class="text-sm text-gray-500">Visão gerencial de valores</p>
+              </div>
+              <button class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                Ver detalhes
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+
+              <!-- Valor Contratado -->
+              <div class="p-5 bg-gradient-to-br from-blue-50 to-white rounded-xl border-l-4 border-blue-500">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Valor Contratado</p>
+                    <p class="text-2xl font-extrabold text-gray-900 mt-2">R$ 1.250.000</p>
+                  </div>
+                  <div class="p-2 bg-blue-100 rounded-lg">
+                    <span class="material-symbols-outlined text-blue-600">account_balance</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aditivos -->
+              <div class="p-5 bg-gradient-to-br from-purple-50 to-white rounded-xl border-l-4 border-purple-500">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Aditivos</p>
+                    <p class="text-2xl font-extrabold text-gray-900 mt-2">R$ 125.000</p>
+                    <p class="text-xs text-purple-600 font-semibold mt-1">+10% do original</p>
+                  </div>
+                  <div class="p-2 bg-purple-100 rounded-lg">
+                    <span class="material-symbols-outlined text-purple-600">add_circle</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Valor Total -->
+              <div class="p-5 bg-gradient-to-br from-gray-100 to-white rounded-xl border-l-4 border-primary">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Valor Total</p>
+                    <p class="text-2xl font-extrabold text-gray-900 mt-2">R$ 1.375.000</p>
+                  </div>
+                  <div class="p-2 bg-gray-200 rounded-lg">
+                    <span class="material-symbols-outlined text-primary">payments</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Saldo a Pagar -->
+              <div class="p-5 bg-gradient-to-br from-amber-50 to-white rounded-xl border-l-4 border-amber-500">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Saldo a Pagar</p>
+                    <p class="text-2xl font-extrabold text-gray-900 mt-2">R$ 481.250</p>
+                  </div>
+                  <div class="p-2 bg-amber-100 rounded-lg">
+                    <span class="material-symbols-outlined text-amber-600">account_balance_wallet</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Barras comparativas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+              <!-- % Pago -->
+              <div>
+                <div class="flex justify-between items-end mb-2">
+                  <span class="text-sm font-bold text-gray-700">Percentual Pago</span>
+                  <span class="text-lg font-extrabold text-success">65%</span>
+                </div>
+                <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-success/100 rounded-full" style="width: 65%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">R$ 893.750 de R$ 1.375.000</p>
+              </div>
+
+              <!-- % Executado -->
+              <div>
+                <div class="flex justify-between items-end mb-2">
+                  <span class="text-sm font-bold text-gray-700">Percentual Executado</span>
+                  <span class="text-lg font-extrabold text-primary">65%</span>
+                </div>
+                <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-primary rounded-full" style="width: 65%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Obra executada conforme medições aprovadas</p>
+              </div>
+
+            </div>
+
+            <!-- Status: Pagamentos em dia -->
+            <div class="mt-6 p-4 bg-success/10 border border-success/30 rounded-xl flex items-start gap-3">
+              <div class="p-2 bg-success/20 rounded-lg flex-shrink-0">
+                <span class="material-symbols-outlined text-success">check_circle</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-success">Pagamentos em dia</p>
+                <p class="text-xs text-success mt-1">O percentual pago está alinhado com o percentual executado. Fluxo financeiro saudável.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 10: Alertas e Observações -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-white p-8 rounded-xl border border-border-light card-shadow">
+            <div class="flex justify-between items-center mb-6">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">Alertas e Observações</h3>
+                <p class="text-sm text-gray-500">Pontos de atenção do projeto</p>
+              </div>
+              <span class="text-xs font-bold bg-amber-50 text-amber-600 px-3 py-1 rounded-full">3 alertas ativos</span>
+            </div>
+
+            <div class="space-y-4">
+
+              <!-- Alerta Crítico: Atraso -->
+              <div class="flex gap-4 p-4 bg-red-50 border border-red-200 rounded-xl">
+                <div class="flex-shrink-0 w-10 h-10 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined">error</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1 flex-wrap">
+                    <p class="text-sm font-bold text-red-800">Atraso Crítico - Entrega de Esquadrias</p>
+                    <span class="text-[10px] font-bold text-white bg-red-500 px-2 py-0.5 rounded uppercase">Crítico</span>
+                  </div>
+                  <p class="text-xs text-red-600 mb-2">Fornecedor confirmou atraso de 15 dias. Impacto direto no cronograma de acabamentos.</p>
+                  <div class="flex items-center gap-4">
+                    <span class="text-[10px] text-red-500 font-medium">Aberto há 3 dias</span>
+                    <button class="text-[10px] font-bold text-red-700 hover:underline">Ver detalhes</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alerta Médio: Dependência de aprovação -->
+              <div class="flex gap-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                <div class="flex-shrink-0 w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined">pending_actions</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1 flex-wrap">
+                    <p class="text-sm font-bold text-amber-800">Aguardando Aprovação - Medição #7</p>
+                    <span class="text-[10px] font-bold text-white bg-amber-500 px-2 py-0.5 rounded uppercase">Pendente</span>
+                  </div>
+                  <p class="text-xs text-amber-600 mb-2">Medição enviada em 10/06/2025, aguardando sua aprovação para liberação do pagamento.</p>
+                  <div class="flex items-center gap-4">
+                    <span class="text-[10px] text-amber-500 font-medium">Há 5 dias aguardando</span>
+                    <button class="text-[10px] font-bold text-amber-700 hover:underline">Aprovar agora</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alerta Informativo: Risco -->
+              <div class="flex gap-4 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                <div class="flex-shrink-0 w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                  <span class="material-symbols-outlined">info</span>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1 flex-wrap">
+                    <p class="text-sm font-bold text-blue-800">Previsão de Chuvas - Próxima Semana</p>
+                    <span class="text-[10px] font-bold text-white bg-blue-500 px-2 py-0.5 rounded uppercase">Info</span>
+                  </div>
+                  <p class="text-xs text-blue-600 mb-2">Previsão indica 5 dias consecutivos de chuva. Atividades externas podem ser afetadas.</p>
+                  <div class="flex items-center gap-4">
+                    <span class="text-[10px] text-blue-500 font-medium">Gerado automaticamente</span>
+                    <button class="text-[10px] font-bold text-blue-700 hover:underline">Dispensar</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Adicionar observação -->
+            <div class="mt-6 pt-6 border-t border-gray-100">
+              <button class="w-full py-3 border-2 border-dashed border-gray-200 rounded-xl text-sm font-medium text-gray-500 hover:border-primary/40 hover:text-primary transition-colors flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-lg">add_circle</span>
+                Adicionar observação
+              </button>
+            </div>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <!-- BLOCO 11: Ações Rápidas -->
+          <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+          <div class="bg-primary rounded-2xl p-8 overflow-hidden relative">
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+              <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern height="40" id="grid-pattern" patternunits="userSpaceOnUse" width="40">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"></path>
+                  </pattern>
+                </defs>
+                <rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+              </svg>
+            </div>
+
+            <div class="relative z-10">
+              <div class="mb-6">
+                <h3 class="text-xl font-bold text-white">Ações Rápidas</h3>
+                <p class="text-white/70 text-sm mt-1">Interaja diretamente com a equipe do projeto</p>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <!-- Enviar mensagem -->
+                <button class="flex flex-col items-center gap-3 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-colors group">
+                  <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <span class="material-symbols-outlined text-white text-2xl">mail</span>
+                  </div>
+                  <span class="text-white text-sm font-bold text-center">Enviar Mensagem</span>
+                </button>
+
+                <!-- Solicitar atualização -->
+                <button class="flex flex-col items-center gap-3 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-colors group">
+                  <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <span class="material-symbols-outlined text-white text-2xl">refresh</span>
+                  </div>
+                  <span class="text-white text-sm font-bold text-center">Solicitar Atualização</span>
+                </button>
+
+                <!-- Ver documentos -->
+                <button class="flex flex-col items-center gap-3 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-colors group">
+                  <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <span class="material-symbols-outlined text-white text-2xl">folder_open</span>
+                  </div>
+                  <span class="text-white text-sm font-bold text-center">Ver Documentos</span>
+                </button>
+
+                <!-- Abrir chat -->
+                <button class="flex flex-col items-center gap-3 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/20 transition-colors group relative">
+                  <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <span class="material-symbols-outlined text-white text-2xl">chat</span>
+                  </div>
+                  <span class="text-white text-sm font-bold text-center">Abrir Chat</span>
+                  <!-- Indicador de mensagens não lidas -->
+                  <span class="absolute top-4 right-4 w-5 h-5 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">3</span>
+                </button>
+
+              </div>
+
+              <!-- Botões secundários -->
+              <div class="flex flex-wrap gap-3 mt-6 pt-6 border-t border-white/20">
+                <button class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 text-white text-xs font-bold hover:bg-white/20 transition-colors flex items-center gap-2">
+                  <span class="material-symbols-outlined text-sm">calendar_month</span>
+                  Agendar visita
+                </button>
+                <button class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 text-white text-xs font-bold hover:bg-white/20 transition-colors flex items-center gap-2">
+                  <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                  Gerar relatório
+                </button>
+                <button class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 text-white text-xs font-bold hover:bg-white/20 transition-colors flex items-center gap-2">
+                  <span class="material-symbols-outlined text-sm">share</span>
+                  Compartilhar
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

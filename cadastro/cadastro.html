@@ -1,0 +1,310 @@
+<!doctype html>
+<html class="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cadastro - XCon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#333333",
+              white: "#FFFFFF",
+              "gray-light": "#F4F5F5",
+              "gray-dark": "#7A7A7A",
+              "background-light": "#ffffff",
+              "background-dark": "#1C1F22",
+              "surface-dark": "#2A2D30",
+              success: "#22846D",
+              warning: "#F5A623",
+              error: "#E53935",
+              info: "#1E88E5",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.6rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      .dark .glass-nav {
+        background-color: rgba(28, 31, 34, 0.7);
+      }
+      .subtle-shadow {
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#101819] dark:text-white transition-colors duration-300"
+  >
+    <!-- Fixed Glassmorphic Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-6"
+    >
+      <nav
+        class="glass-nav flex items-center justify-between w-full max-w-[1200px] px-8 py-3 rounded-full border border-white/20 dark:border-white/10 subtle-shadow"
+      >
+        <a href="../homepage/homepage.html">
+          <img
+            src="../logo/logo-xconstrucao-horizontal.png"
+            alt="XCon"
+            class="h-10"
+          />
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          <a
+            class="text-sm font-medium hover:opacity-70 transition-opacity"
+            href="../homepage/homepage.html#inicio"
+            >Início</a
+          >
+          <a
+            class="text-sm font-medium hover:opacity-70 transition-opacity"
+            href="../homepage/homepage.html#solucoes"
+            >Soluções</a
+          >
+          <a
+            class="text-sm font-medium hover:opacity-70 transition-opacity"
+            href="../homepage/homepage.html#projetos"
+            >Projetos</a
+          >
+        </div>
+        <div class="hidden md:block w-[120px]"></div>
+      </nav>
+    </header>
+
+    <main
+      class="relative pt-32 min-h-screen flex items-center justify-center px-6 py-16"
+    >
+      <!-- Card de Cadastro -->
+      <div class="w-full max-w-md">
+        <div
+          class="bg-white dark:bg-slate-900/50 rounded-3xl p-10 border border-slate-100 dark:border-slate-800 subtle-shadow"
+        >
+          <!-- Badge de Perfil (dinamico, oculto para admin) -->
+          <div id="badge-container" class="flex justify-center mb-8">
+            <div
+              id="profile-badge"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wider"
+            >
+              <span id="badge-icon" class="material-symbols-outlined text-lg"
+                >business</span
+              >
+              <span id="badge-text">Contratante</span>
+            </div>
+          </div>
+
+          <!-- Titulo -->
+          <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tight mb-2">
+              Cadastro
+            </h1>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">
+              Crie sua conta
+            </p>
+          </div>
+
+          <!-- Formulario -->
+          <form class="flex flex-col gap-4">
+            <!-- Nome Completo -->
+            <div>
+              <label
+                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >Nome completo</label
+              >
+              <input
+                type="text"
+                placeholder="Seu nome completo"
+                class="w-full bg-gray-50 dark:bg-gray-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-slate-400 transition-all"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                placeholder="seu@email.com"
+                class="w-full bg-gray-50 dark:bg-gray-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-slate-400 transition-all"
+              />
+            </div>
+
+            <!-- Telefone -->
+            <div>
+              <label
+                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >Telefone</label
+              >
+              <input
+                type="tel"
+                placeholder="(00) 00000-0000"
+                class="w-full bg-gray-50 dark:bg-gray-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-slate-400 transition-all"
+              />
+            </div>
+
+            <!-- Senha -->
+            <div>
+              <label
+                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >Senha</label
+              >
+              <input
+                type="password"
+                placeholder="Mínimo 8 caracteres"
+                class="w-full bg-gray-50 dark:bg-gray-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-slate-400 transition-all"
+              />
+            </div>
+
+            <!-- Confirmar Senha -->
+            <div>
+              <label
+                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >Confirmar senha</label
+              >
+              <input
+                type="password"
+                placeholder="Repita a senha"
+                class="w-full bg-gray-50 dark:bg-gray-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-slate-400 transition-all"
+              />
+            </div>
+
+            <!-- Checkbox Termos -->
+            <label class="flex items-start gap-3 cursor-pointer mt-2">
+              <input
+                type="checkbox"
+                class="w-4 h-4 mt-0.5 rounded border-slate-300 text-primary focus:ring-primary/20"
+              />
+              <span
+                class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed"
+              >
+                Aceito os
+                <a href="#" class="font-medium text-primary hover:underline"
+                  >termos de uso</a
+                >
+                e
+                <a href="#" class="font-medium text-primary hover:underline"
+                  >política de privacidade</a
+                >
+              </span>
+            </label>
+
+            <!-- Botao Criar Conta -->
+            <button
+              type="submit"
+              class="w-full bg-primary text-white font-bold h-12 rounded-full hover:scale-[1.02] hover:brightness-110 transition-all mt-4"
+            >
+              Criar conta
+            </button>
+          </form>
+
+          <!-- Divisor -->
+          <div class="flex items-center gap-4 my-6">
+            <div class="flex-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+            <span class="text-xs text-slate-400 font-medium">ou</span>
+            <div class="flex-1 h-px bg-slate-200 dark:bg-slate-700"></div>
+          </div>
+
+          <!-- Link Login -->
+          <p class="text-center text-sm text-slate-600 dark:text-slate-400">
+            Já tem conta?
+            <a
+              id="login-link"
+              href="../login/login.html?perfil=contratante"
+              class="font-bold text-primary hover:underline"
+            >
+              Faça login
+            </a>
+          </p>
+        </div>
+
+        <!-- Voltar -->
+        <div class="text-center mt-6">
+          <a
+            href="../acesso-plataforma/acesso-plataforma.html"
+            class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary transition-colors"
+          >
+            <span class="material-symbols-outlined text-lg">arrow_back</span>
+            Voltar para seleção de perfil
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-100 dark:border-slate-800">
+      <div
+        class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <img
+          src="../logo/logo-xconstrucao-horizontal.png"
+          alt="XCon"
+          class="h-12"
+        />
+        <div class="text-xs text-slate-400 font-medium">
+          © 2026 xconstrução.lab. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript para Badge Dinamico -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const perfil = urlParams.get("perfil") || "contratante";
+
+        const badgeContainer = document.getElementById("badge-container");
+        const badgeIcon = document.getElementById("badge-icon");
+        const badgeText = document.getElementById("badge-text");
+        const loginLink = document.getElementById("login-link");
+
+        // Redireciona admin para login (admin nao pode se cadastrar)
+        if (perfil === "administrador") {
+          window.location.href = "../login/login.html?perfil=administrador";
+          return;
+        }
+
+        const perfis = {
+          contratante: { icon: "business", text: "Contratante" },
+          empreiteiro: { icon: "construction", text: "Empreiteiro" },
+        };
+
+        const config = perfis[perfil] || perfis.contratante;
+        badgeIcon.textContent = config.icon;
+        badgeText.textContent = config.text;
+
+        // Atualiza link de login
+        loginLink.href = `../login/login.html?perfil=${perfil}`;
+      });
+    </script>
+  </body>
+</html>
