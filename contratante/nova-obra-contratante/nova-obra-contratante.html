@@ -110,11 +110,11 @@
           </div>
           <nav class="flex flex-col gap-1">
             <a
-              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
-              href="dashboard-contratante.html"
+              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
+              href="nova-obra-contratante.html"
             >
-              <span class="material-symbols-outlined text-[20px]">dashboard</span>
-              <span class="text-sm font-medium">Dashboard</span>
+              <span class="material-symbols-outlined text-[20px]">add_circle</span>
+              <span class="text-sm font-semibold">Nova Obra</span>
             </a>
             <a
               class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
@@ -124,11 +124,11 @@
               <span class="text-sm font-medium">Minhas Obras</span>
             </a>
             <a
-              class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
-              href="nova-obra-contratante.html"
+              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
+              href="dashboard-contratante.html"
             >
-              <span class="material-symbols-outlined text-[20px]">add_circle</span>
-              <span class="text-sm font-semibold">Nova Obra</span>
+              <span class="material-symbols-outlined text-[20px]">dashboard</span>
+              <span class="text-sm font-medium">Dashboard</span>
             </a>
           </nav>
           <!-- Banner Monetização Superior -->
@@ -484,6 +484,52 @@
                     class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400 resize-none"
                   ></textarea>
                 </div>
+
+                <!-- Novos itens do escopo -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Novos itens do escopo</label>
+
+                  <!-- Lista de itens adicionados -->
+                  <div id="lista-novos-itens" class="flex flex-col gap-2 mb-3"></div>
+
+                  <!-- Botao preencher novos itens -->
+                  <button
+                    type="button"
+                    id="btn-novo-item"
+                    onclick="toggleNovoItem()"
+                    class="flex items-center gap-2 px-4 py-2.5 border border-dashed border-gray-300 rounded-xl text-sm font-medium text-gray-600 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-lg">check_box_outline_blank</span>
+                    Preencher novos itens
+                  </button>
+
+                  <!-- Area de preenchimento (oculta) -->
+                  <div id="area-novo-item" class="hidden flex flex-col gap-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+                    <textarea
+                      id="input-novo-item"
+                      rows="2"
+                      placeholder="Descreva o novo item do escopo..."
+                      class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-gray-400 resize-none"
+                    ></textarea>
+                    <div class="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onclick="salvarNovoItem()"
+                        class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-1.5"
+                      >
+                        <span class="material-symbols-outlined text-sm">save</span>
+                        Salvar
+                      </button>
+                      <button
+                        type="button"
+                        onclick="cancelarNovoItem()"
+                        class="px-4 py-2 text-gray-500 text-xs font-bold rounded-lg hover:bg-gray-200 transition-colors"
+                      >
+                        Cancelar
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -626,5 +672,45 @@
         </div>
       </main>
     </div>
+    <script>
+      function toggleNovoItem() {
+        document.getElementById('btn-novo-item').classList.add('hidden');
+        document.getElementById('area-novo-item').classList.remove('hidden');
+        document.getElementById('input-novo-item').focus();
+      }
+
+      function salvarNovoItem() {
+        var input = document.getElementById('input-novo-item');
+        var texto = input.value.trim();
+        if (!texto) return;
+
+        var lista = document.getElementById('lista-novos-itens');
+        var item = document.createElement('div');
+        item.className = 'flex items-center justify-between gap-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5';
+        item.innerHTML =
+          '<div class="flex items-center gap-2">' +
+            '<span class="material-symbols-outlined text-lg text-success">check_box</span>' +
+            '<span class="text-sm text-gray-700 dark:text-gray-300">' + texto.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>' +
+          '</div>' +
+          '<button type="button" onclick="removerItem(this)" class="text-gray-400 hover:text-red-500 transition-colors">' +
+            '<span class="material-symbols-outlined text-lg">close</span>' +
+          '</button>';
+        lista.appendChild(item);
+
+        input.value = '';
+        document.getElementById('area-novo-item').classList.add('hidden');
+        document.getElementById('btn-novo-item').classList.remove('hidden');
+      }
+
+      function cancelarNovoItem() {
+        document.getElementById('input-novo-item').value = '';
+        document.getElementById('area-novo-item').classList.add('hidden');
+        document.getElementById('btn-novo-item').classList.remove('hidden');
+      }
+
+      function removerItem(btn) {
+        btn.closest('.flex.items-center.justify-between').remove();
+      }
+    </script>
   </body>
 </html>

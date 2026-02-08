@@ -109,8 +109,8 @@
               class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
               href="#"
             >
-              <span class="material-symbols-outlined text-[20px]">dashboard</span>
-              <span class="text-sm font-medium">Dashboard</span>
+              <span class="material-symbols-outlined text-[20px]">add_circle</span>
+              <span class="text-sm font-medium">Nova Obra</span>
             </a>
             <a
               class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
@@ -123,8 +123,8 @@
               class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
               href="#"
             >
-              <span class="material-symbols-outlined text-[20px]">add_circle</span>
-              <span class="text-sm font-medium">Nova Obra</span>
+              <span class="material-symbols-outlined text-[20px]">dashboard</span>
+              <span class="text-sm font-medium">Dashboard</span>
             </a>
             <a
               class="flex items-center gap-3 px-6 py-3 sidebar-item-active text-primary group"
@@ -395,10 +395,27 @@
                   type="text"
                 />
               </div>
-              <button class="px-4 py-2 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary/20 transition-colors flex items-center gap-2">
-                <span class="material-symbols-outlined text-base">download</span>
-                Exportar CSV
-              </button>
+              <div class="relative">
+                <button onclick="document.getElementById('exportDropdown').classList.toggle('hidden')" class="px-4 py-2 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary/20 transition-colors flex items-center gap-2">
+                  <span class="material-symbols-outlined text-base">download</span>
+                  Exportar
+                  <span class="material-symbols-outlined text-base">expand_more</span>
+                </button>
+                <div id="exportDropdown" class="hidden absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-20 overflow-hidden">
+                  <button onclick="document.getElementById('exportDropdown').classList.add('hidden')" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                    <span class="material-symbols-outlined text-base text-success">table_chart</span>
+                    CSV
+                  </button>
+                  <button onclick="document.getElementById('exportDropdown').classList.add('hidden')" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-t border-gray-100">
+                    <span class="material-symbols-outlined text-base text-blue-500">image</span>
+                    JPG
+                  </button>
+                  <button onclick="document.getElementById('exportDropdown').classList.add('hidden')" class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors border-t border-gray-100">
+                    <span class="material-symbols-outlined text-base text-red-500">picture_as_pdf</span>
+                    PDF
+                  </button>
+                </div>
+              </div>
             </div>
 
             <!-- Tabela -->
@@ -578,5 +595,14 @@
         </div>
       </main>
     </div>
+  <script>
+    document.addEventListener('click', function(e) {
+      var dropdown = document.getElementById('exportDropdown');
+      var btn = dropdown.previousElementSibling;
+      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  </script>
   </body>
 </html>
