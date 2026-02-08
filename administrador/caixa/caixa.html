@@ -111,15 +111,6 @@
               class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
               href="#"
             >
-              <span class="material-symbols-outlined text-[20px]"
-                >dashboard</span
-              >
-              <span class="text-sm font-medium">Dashboard</span>
-            </a>
-            <a
-              class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
-              href="#"
-            >
               <span class="material-symbols-outlined text-[20px]">person</span>
               <span class="text-sm font-medium">Cliente</span>
             </a>
@@ -424,6 +415,556 @@
                 <p class="text-gray-500 text-sm font-medium">Dias de caixa</p>
                 <p class="text-4xl font-extrabold text-gray-900 mt-1">
                   42 dias
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCO 2.5: Visão Macroeconômica do Caixa -->
+
+          <!-- A) Header + Seletor de Período -->
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-end gap-4"
+          >
+            <div class="flex items-center gap-3">
+              <div class="p-3 bg-info/10 text-info rounded-lg">
+                <span class="material-symbols-outlined">monitoring</span>
+              </div>
+              <div>
+                <h2
+                  class="text-xl font-extrabold text-gray-900 tracking-tight uppercase"
+                >
+                  Visão Macroeconômica do Caixa
+                </h2>
+                <p class="text-sm text-gray-500 mt-0.5">
+                  Acompanhe os principais indicadores econômicos que impactam o
+                  caixa e as operações da plataforma.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-xl">
+              <span
+                class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                >7 dias</span
+              >
+              <span
+                class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg cursor-pointer"
+                >Últimos 30 dias</span
+              >
+              <span
+                class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                >90 dias</span
+              >
+              <span
+                class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                >Ano atual</span
+              >
+              <span
+                class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >calendar_today</span
+                >
+                Personalizado
+              </span>
+              <span
+                class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >update</span
+                >
+                Futuro
+              </span>
+            </div>
+          </div>
+
+          <!-- B) Cards de Índices Econômicos -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- INCC -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-warning/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-warning/10 text-warning rounded-lg">
+                  <span class="material-symbols-outlined">construction</span>
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >+6,12% (12m)</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">INCC</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  0,52%
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">Variação mensal</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,28 L20,24 L40,22 L60,18 L80,14 L100,10 L120,6"
+                    fill="none"
+                    stroke="#F5A623"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- IGP-M -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-info/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-info/10 text-info rounded-lg">
+                  <span class="material-symbols-outlined">show_chart</span>
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >+4,83% (12m)</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">IGP-M</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  0,38%
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">Variação mensal</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,26 L20,24 L40,22 L60,20 L80,16 L100,12 L120,8"
+                    fill="none"
+                    stroke="#1E88E5"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- IPCA -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-error/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-error/10 text-error rounded-lg">
+                  <span class="material-symbols-outlined">shopping_cart</span>
+                </div>
+                <span
+                  class="text-warning text-xs font-bold bg-warning/10 px-2 py-1 rounded-full"
+                  >+4,23% (12m)</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">IPCA</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  0,44%
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">Variação mensal</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,24 L20,22 L40,20 L60,18 L80,16 L100,14 L120,10"
+                    fill="none"
+                    stroke="#E53935"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- SELIC -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-primary/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-primary/10 text-primary rounded-lg">
+                  <span class="material-symbols-outlined">percent</span>
+                </div>
+                <span
+                  class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded-full"
+                  >Estável</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">SELIC</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  13,75% a.a.
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">Taxa básica de juros</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,16 L20,18 L40,14 L60,16 L80,15 L100,17 L120,16"
+                    fill="none"
+                    stroke="#333333"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- DÓLAR -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-success/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-success/10 text-success rounded-lg">
+                  <span class="material-symbols-outlined"
+                    >currency_exchange</span
+                  >
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >+9,1% (12m)</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Dólar</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  R$ 5,42
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">Cotação atual</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,28 L20,24 L40,20 L60,16 L80,10 L100,6 L120,2"
+                    fill="none"
+                    stroke="#22846D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- BITCOIN -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-warning/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-warning/10 text-warning rounded-lg">
+                  <span class="material-symbols-outlined"
+                    >currency_bitcoin</span
+                  >
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >+120% (12m)</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Bitcoin</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  R$ 385.000
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">Cotação atual</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,30 L20,28 L40,26 L60,22 L80,14 L100,6 L120,2"
+                    fill="none"
+                    stroke="#F5A623"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- RISCO BRASIL -->
+            <div
+              class="bg-white p-6 rounded-xl border border-border-light card-shadow flex flex-col gap-4 group hover:border-error/30 transition-all"
+            >
+              <div class="flex justify-between items-start">
+                <div class="p-3 bg-error/10 text-error rounded-lg">
+                  <span class="material-symbols-outlined">flag</span>
+                </div>
+                <span
+                  class="text-success text-xs font-bold bg-success/10 px-2 py-1 rounded-full"
+                  >-12% (12m) ↓</span
+                >
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm font-medium">Risco Brasil</p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">
+                  185 pts
+                </p>
+                <p class="text-xs text-gray-400 mt-0.5">CDS 5 anos</p>
+              </div>
+              <div class="h-8 w-full">
+                <svg
+                  class="w-full h-full"
+                  viewBox="0 0 120 32"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,4 L20,8 L40,12 L60,16 L80,20 L100,24 L120,28"
+                    fill="none"
+                    stroke="#E53935"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- C) Framework de Impacto Financeiro -->
+          <div
+            class="bg-white p-8 rounded-xl border border-border-light card-shadow"
+          >
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
+              <div class="flex items-center gap-3">
+                <div class="p-3 bg-primary/10 text-primary rounded-lg">
+                  <span class="material-symbols-outlined">analytics</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900">
+                    Framework de Impacto Financeiro
+                  </h3>
+                  <p class="text-sm text-gray-500 mt-0.5">
+                    Análise do impacto dos indicadores macroeconômicos sobre o caixa da plataforma.
+                  </p>
+                </div>
+              </div>
+              <span
+                class="text-primary text-sm font-bold bg-primary/10 px-4 py-2 rounded-full whitespace-nowrap"
+                >Saldo Atual: R$ 2.450.000</span
+              >
+            </div>
+
+            <!-- Grid de itens de impacto -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Rendimento Projetado -->
+              <div class="flex items-start gap-3 p-4 bg-success/5 rounded-xl">
+                <div
+                  class="p-2 bg-success/10 text-success rounded-lg flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >savings</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+                  >
+                    Rendimento Projetado 12m (Selic/CDI)
+                  </p>
+                  <p class="text-lg font-extrabold text-success mt-0.5">
+                    +R$ 280k a 330k
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">
+                    Rendimento bruto sobre saldo médio aplicado
+                  </p>
+                </div>
+              </div>
+
+              <!-- Erosão por Inflação -->
+              <div class="flex items-start gap-3 p-4 bg-error/5 rounded-xl">
+                <div
+                  class="p-2 bg-error/10 text-error rounded-lg flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >trending_down</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+                  >
+                    Erosão por Inflação (IPCA)
+                  </p>
+                  <p class="text-lg font-extrabold text-error mt-0.5">
+                    -R$ 104k
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">
+                    Perda do poder de compra sobre o saldo parado
+                  </p>
+                </div>
+              </div>
+
+              <!-- Impacto INCC -->
+              <div class="flex items-start gap-3 p-4 bg-warning/5 rounded-xl">
+                <div
+                  class="p-2 bg-warning/10 text-warning rounded-lg flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >construction</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+                  >
+                    Impacto INCC (custo obras)
+                  </p>
+                  <p class="text-lg font-extrabold text-warning mt-0.5">
+                    +6% custo
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">
+                    Impacto indireto em margens das obras
+                  </p>
+                </div>
+              </div>
+
+              <!-- Dólar -->
+              <div class="flex items-start gap-3 p-4 bg-success/5 rounded-xl">
+                <div
+                  class="p-2 bg-success/10 text-success rounded-lg flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >currency_exchange</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+                  >
+                    Dólar (hedge cambial)
+                  </p>
+                  <p class="text-lg font-extrabold text-success mt-0.5">
+                    +9% ganho potencial
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">
+                    Ganho potencial se parte do caixa em moeda estrangeira
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bitcoin -->
+              <div class="flex items-start gap-3 p-4 bg-warning/5 rounded-xl">
+                <div
+                  class="p-2 bg-warning/10 text-warning rounded-lg flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >currency_bitcoin</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+                  >
+                    Bitcoin (hedge e diversificação)
+                  </p>
+                  <p class="text-lg font-extrabold text-warning mt-0.5">
+                    +120% ou -50%
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">
+                    Alta volatilidade — potencial hedge de risco sistêmico
+                  </p>
+                </div>
+              </div>
+
+              <!-- Risco Brasil -->
+              <div class="flex items-start gap-3 p-4 bg-info/5 rounded-xl">
+                <div
+                  class="p-2 bg-info/10 text-info rounded-lg flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >flag</span
+                  >
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+                  >
+                    Risco Brasil
+                  </p>
+                  <p class="text-lg font-extrabold text-info mt-0.5">
+                    185 pts
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">
+                    Afeta custo de crédito e confiança do investidor
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alerta Automático -->
+            <div
+              class="flex items-start gap-3 p-4 bg-warning/5 rounded-xl border border-warning/20 mt-6"
+            >
+              <div
+                class="flex-shrink-0 w-8 h-8 bg-warning/10 text-warning rounded-full flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >notifications_active</span
+                >
+              </div>
+              <div>
+                <p class="text-xs font-bold text-warning uppercase tracking-wider">
+                  Alerta Automático
+                </p>
+                <p class="text-sm text-gray-700 mt-1">
+                  Se Selic cair para
+                  <span class="font-bold text-gray-900">10%</span>, rendimento
+                  cai
+                  <span class="font-bold text-error">R$ 80k/ano</span>.
+                  Recomenda-se reavaliar estratégia de alocação do caixa.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- D) Painel de Interconexão Macroeconômica -->
+          <div
+            class="bg-gradient-to-r from-primary/5 to-info/5 p-8 rounded-xl border border-border-light card-shadow"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="p-3 bg-primary/10 text-primary rounded-lg flex-shrink-0"
+              >
+                <span class="material-symbols-outlined">hub</span>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-gray-900">
+                  Interconexão Macroeconômica
+                </h3>
+                <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                  Em um mercado macroeconômico interconectado, praticamente todos
+                  os índices influenciam uns aos outros — inflação afeta custo de
+                  materiais, dólar impacta importação de equipamentos, risco
+                  Brasil afeta crédito e confiança do investidor, Selic define o
+                  custo de capital, Bitcoin pode ser hedge de risco sistêmico, e
+                  por aí vai. Este framework permite à XConstrução criar
+                  estratégias, predição e previsibilidade sobre o mercado e todos
+                  os seus agentes.
                 </p>
               </div>
             </div>
