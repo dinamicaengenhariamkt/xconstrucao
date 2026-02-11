@@ -163,7 +163,9 @@
               class="flex items-center gap-3 px-6 py-3 text-gray-500 hover:text-primary transition-colors"
               href="#"
             >
-              <span class="material-symbols-outlined text-[20px]">campaign</span>
+              <span class="material-symbols-outlined text-[20px]"
+                >campaign</span
+              >
               <span class="text-sm font-medium">Anúncios</span>
             </a>
           </nav>
@@ -495,9 +497,7 @@
               </div>
               <div>
                 <p class="text-gray-500 text-sm font-medium">INCC</p>
-                <p class="text-3xl font-extrabold text-gray-900 mt-1">
-                  0,52%
-                </p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">0,52%</p>
                 <p class="text-xs text-gray-400 mt-0.5">Variação mensal</p>
               </div>
               <div class="h-8 w-full">
@@ -532,9 +532,7 @@
               </div>
               <div>
                 <p class="text-gray-500 text-sm font-medium">IGP-M</p>
-                <p class="text-3xl font-extrabold text-gray-900 mt-1">
-                  0,38%
-                </p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">0,38%</p>
                 <p class="text-xs text-gray-400 mt-0.5">Variação mensal</p>
               </div>
               <div class="h-8 w-full">
@@ -569,9 +567,7 @@
               </div>
               <div>
                 <p class="text-gray-500 text-sm font-medium">IPCA</p>
-                <p class="text-3xl font-extrabold text-gray-900 mt-1">
-                  0,44%
-                </p>
+                <p class="text-3xl font-extrabold text-gray-900 mt-1">0,44%</p>
                 <p class="text-xs text-gray-400 mt-0.5">Variação mensal</p>
               </div>
               <div class="h-8 w-full">
@@ -749,7 +745,9 @@
             class="bg-white p-8 rounded-xl border border-border-light card-shadow"
           >
             <!-- Header -->
-            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
+            <div
+              class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6 flex-wrap"
+            >
               <div class="flex items-center gap-3">
                 <div class="p-3 bg-primary/10 text-primary rounded-lg">
                   <span class="material-symbols-outlined">analytics</span>
@@ -759,9 +757,44 @@
                     Framework de Impacto Financeiro
                   </h3>
                   <p class="text-sm text-gray-500 mt-0.5">
-                    Análise do impacto dos indicadores macroeconômicos sobre o caixa da plataforma.
+                    Análise do impacto dos indicadores macroeconômicos sobre o
+                    caixa da plataforma.
                   </p>
                 </div>
+              </div>
+              <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-xl">
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                  >7 dias</span
+                >
+                <span
+                  class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg cursor-pointer"
+                  >Últimos 30 dias</span
+                >
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                  >90 dias</span
+                >
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer"
+                  >Ano atual</span
+                >
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >calendar_today</span
+                  >
+                  Personalizado
+                </span>
+                <span
+                  class="px-4 py-2 text-gray-600 text-sm font-medium rounded-lg hover:bg-white hover:shadow-sm transition-all cursor-pointer flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >update</span
+                  >
+                  Futuro
+                </span>
               </div>
               <span
                 class="text-primary text-sm font-bold bg-primary/10 px-4 py-2 rounded-full whitespace-nowrap"
@@ -893,9 +926,7 @@
 
               <!-- Risco Brasil -->
               <div class="flex items-start gap-3 p-4 bg-info/5 rounded-xl">
-                <div
-                  class="p-2 bg-info/10 text-info rounded-lg flex-shrink-0"
-                >
+                <div class="p-2 bg-info/10 text-info rounded-lg flex-shrink-0">
                   <span class="material-symbols-outlined text-[20px]"
                     >flag</span
                   >
@@ -906,9 +937,7 @@
                   >
                     Risco Brasil
                   </p>
-                  <p class="text-lg font-extrabold text-info mt-0.5">
-                    185 pts
-                  </p>
+                  <p class="text-lg font-extrabold text-info mt-0.5">185 pts</p>
                   <p class="text-xs text-gray-500 mt-1">
                     Afeta custo de crédito e confiança do investidor
                   </p>
@@ -928,43 +957,16 @@
                 >
               </div>
               <div>
-                <p class="text-xs font-bold text-warning uppercase tracking-wider">
+                <p
+                  class="text-xs font-bold text-warning uppercase tracking-wider"
+                >
                   Alerta Automático
                 </p>
                 <p class="text-sm text-gray-700 mt-1">
                   Se Selic cair para
                   <span class="font-bold text-gray-900">10%</span>, rendimento
-                  cai
-                  <span class="font-bold text-error">R$ 80k/ano</span>.
+                  cai <span class="font-bold text-error">R$ 80k/ano</span>.
                   Recomenda-se reavaliar estratégia de alocação do caixa.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- D) Painel de Interconexão Macroeconômica -->
-          <div
-            class="bg-gradient-to-r from-primary/5 to-info/5 p-8 rounded-xl border border-border-light card-shadow"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="p-3 bg-primary/10 text-primary rounded-lg flex-shrink-0"
-              >
-                <span class="material-symbols-outlined">hub</span>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-gray-900">
-                  Interconexão Macroeconômica
-                </h3>
-                <p class="text-sm text-gray-600 mt-2 leading-relaxed">
-                  Em um mercado macroeconômico interconectado, praticamente todos
-                  os índices influenciam uns aos outros — inflação afeta custo de
-                  materiais, dólar impacta importação de equipamentos, risco
-                  Brasil afeta crédito e confiança do investidor, Selic define o
-                  custo de capital, Bitcoin pode ser hedge de risco sistêmico, e
-                  por aí vai. Este framework permite à XConstrução criar
-                  estratégias, predição e previsibilidade sobre o mercado e todos
-                  os seus agentes.
                 </p>
               </div>
             </div>
